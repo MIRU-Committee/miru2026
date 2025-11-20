@@ -12,6 +12,32 @@ canonifyURLs = true
 
 # ===============================
 
+[[menu.main]]
+  name = "著者"
+  weight = 2
+  identifier = "author"
+
+[[menu.main]]
+  name = "投稿"
+  weight = 1
+  parent = "author"
+  url = "/author/submission/"
+
+# ===============================
+
+[[languages.en.menu.main]]
+  name = "Author"
+  weight = 2
+  identifier = "author"
+
+[[languages.en.menu.main]]
+  name = "Submission"
+  weight = 1
+  parent = "author"
+  url = "/en/author/submission/"
+
+# ===============================
+
 [languages]
 [languages.ja]
 title = "MIRU2026"
@@ -24,3 +50,5 @@ title = "MIRU2026"
 weight = 1
 [languages.en.params]
 flag = '<svg width="36" height="36" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-jp" viewBox="0 0 640 480"><defs><clipPath id="jp-a"><path fill-opacity=".7" d="M-88 32h640v480H-88z"/></clipPath></defs><g fill-rule="evenodd" stroke-width="1pt" clip-path="url(#jp-a)" transform="translate(88 -32)"><path fill="#fff" d="M-128 32h720v480h-720z"/><circle cx="523.1" cy="344.1" r="194.9" fill="#d30000" transform="translate(-168.4 8.6) scale(.76554)"/></g></svg>'
+
+# ===============================
