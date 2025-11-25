@@ -20,10 +20,13 @@ draft: false
 
 1.	Submissions to the oral presentation track will be evaluated by the paper evaluation committee. Based on the results, it will be presented either in Track A, which has both oral and poster presentations, or in Track B, which is jointly presented with Track C as a poster presentation in an interactive session. The camera ready deadline for all tracks is 6/22. 
 
-2. If you submit to the oral presentation track and want the paper to be considered for the IEICE journal, please submit it through the IEICE website to the journal track. The evaluation process is the same as for MIRU2026. If it is judged as suitable for journal publication, it can be published in a cooperated IEICE journal (Letter). Note, that the review guidelines for MIRU2026 and IEICE Journals do not match, so they might yield different outcomes. In this case, authors are responsible for publication fees.\
+2. If you submit to the oral presentation track and want the paper to be considered for the IEICE journal, please submit it through the IEICE website to the journal track. The evaluation process is the same as for MIRU2026. If it is judged as suitable for journal publication, it can be published in a cooperated IEICE journal (Letter). Note, that the review guidelines for MIRU2026 and IEICE Journals do not match, so they might yield different outcomes. In this case, authors are responsible for publication fees.
+<!--
+\
 Review guidelines for IEICE Journals:\
 Japanese: [https://www.ieice.org/jpn/shiori/iss_5_1.html#5.1](https://www.ieice.org/jpn/shiori/iss_5_1.html#5.1)\
 English: [https://www.ieice.org/eng/shiori/page2_iss.html#7-1](https://www.ieice.org/eng/shiori/page2_iss.html#7-1)
+-->
 
 3.	For poster track submissions without paper evaluations, please submit to Track C. You will be able to present your work as a poster in an interactive session. The submission deadline is 6/22. 
 
@@ -43,8 +46,8 @@ English: [https://www.ieice.org/eng/shiori/page2_iss.html#7-1](https://www.ieice
 
 Use the template provided below. It changed since last year, so make sure to download the newest version. Both LaTeX and Word support Japanese and English.
 
-- LaTeX Style Files (In preparation)
-- Word Template (In preparation)
+- LaTeX Style Files ([ZIP](https://drive.google.com/uc?id=1FHDfLlds8Ye5YZv2_HJCEz9IHmbLyTaT&export=download)) ([Overleaf](https://www.overleaf.com/read/nbnzrtncdbgj#accca5))
+- Word Template ([ZIP](https://drive.google.com/uc?id=1H-1j7PFAwhMqlVpFnPFe6XHkwQWbGe6s&export=download))
 
 ## Miscellaneous
 
