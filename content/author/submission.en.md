@@ -39,7 +39,9 @@ English: [https://www.ieice.org/eng/shiori/page2_iss.html#7-1](https://www.ieice
 - Keep it within 4 pages without references.
 - Include an abstract (up to 100 words in English or 200 characters in Japanese) on the first page.
 - Include author names and their affiliations in the manuscript. The paper evaluations for the oral presentation track are single-blinded, meaning that evaluators will be able to see the author list.
-- The authors may optionally submit supplementary materials such as videos, proofs, code, additional figures or tables, or more detailed analysis of experiments presented in the paper. Reviewers will be encouraged to look at it, but are not obligated to do so.
+- The authors may optionally submit supplementary materials such as videos, proofs, code, additional figures or tables, or more detailed analysis of experiments presented in the paper.
+  - The submitted manuscript and supplementary materials will be included in the MIRU Extended Abstracts as they are: for oral presentations, at the camera-ready submission, and for poster and demo presentations, at the paper submission.
+  - Note that, for papers considered for the oral presentation track, there is no guarantee that the contents of the supplementary materials will be reflected in the evaluation.
 
 
 ## Template
