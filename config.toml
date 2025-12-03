@@ -13,6 +13,17 @@ canonifyURLs = true
 # ===============================
 
 [[menu.main]]
+  name = "組織"
+  weight = 1
+  identifier = "organization"
+
+[[menu.main]]
+  name = "委員会"
+  weight = 1
+  parent = "organization"
+  url = "/organization/committee/"
+
+[[menu.main]]
   name = "著者"
   weight = 2
   identifier = "author"
@@ -24,6 +35,17 @@ canonifyURLs = true
   url = "/author/submission/"
 
 # ===============================
+
+[[languages.en.menu.main]]
+  name = "Organization"
+  weight = 1
+  identifier = "organization"
+
+[[languages.en.menu.main]]
+  name = "Committee"
+  weight = 1
+  parent = "organization"
+  url = "/en/organization/committee/"
 
 [[languages.en.menu.main]]
   name = "Author"
