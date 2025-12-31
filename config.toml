@@ -34,6 +34,12 @@ canonifyURLs = true
   parent = "author"
   url = "/author/submission/"
 
+[[menu.main]]
+  name = "スポンサー"
+  weight = 5
+  identifier = "sponsor"
+  url = "/sponsor/"
+
 # ===============================
 
 [[languages.en.menu.main]]
