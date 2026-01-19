@@ -13,8 +13,8 @@ MIRU2026のスポンサーシッププログラムでは、プラチナ、ゴー
 - 2026年6月10日: ロゴご提供締切
 - 2026年6月30日: スポンサー料納付締切
 
-# 申請フォーム（準備中）
-こちらに申請フォームへのリンクを掲載予定です。
+# 申請フォーム
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSeqtbuLszLYKjg4hTus9UACZPBtv0udM40L9ss-_7pLE5KFzA/closedform">申請フォーム (Google Forms)</a>
 
 # 募集区分と特典
 
