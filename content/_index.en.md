@@ -32,6 +32,6 @@ The Meeting on Image Recognition and Understanding (MIRU) is the largest Japanes
 
 ---
 
-## Sponsor
+## Sponsors
 
 {{< sponsors-en >}}
