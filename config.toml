@@ -35,6 +35,12 @@ canonifyURLs = true
   url = "/author/submission/"
 
 [[menu.main]]
+  name = "選奨規定"
+  weight = 7
+  parent = "author"
+  url = "/author/selection_criteria/"
+
+[[menu.main]]
   name = "スポンサー"
   weight = 5
   identifier = "sponsor"
@@ -63,6 +69,12 @@ canonifyURLs = true
   weight = 1
   parent = "author"
   url = "/en/author/submission/"
+
+[[languages.en.menu.main]]
+  name = "Award Selection Criteria"
+  weight = 7
+  parent = "author"
+  url = "/en/author/selection_criteria/"
 
 # ===============================
 
