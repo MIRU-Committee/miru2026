@@ -55,6 +55,9 @@ Use the template provided below. It changed since last year, so make sure to dow
 
 - The copyright of submitted manuscripts will be retained with the author(s). The MIRU Extended Abstracts will only be made available to MIRU participants during the event via a password-protected download link on the website. 
 - You cannot make any changes to the title or author list after the camera ready deadline.
+- With reference to the Charter of Ethics of IEICE and the Code of Ethics of the IPSJ, please be considerate of those around you, and refrain from explicit sexual or violent content as well as excessive promotion of your company’s products.
+  - [Charter of Ethics of IEICE](https://www.ieice.org/eng_r/about/charter_of_ethics.html)
+  - [Code of Ethics of the IPSJ](https://www.ipsj.or.jp/english/ipsjcode_e.html)
 
 
 # Dual Submission Guidelines
