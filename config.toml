@@ -35,10 +35,22 @@ canonifyURLs = true
   url = "/author/submission/"
 
 [[menu.main]]
+    name = "プログラム編成方針"
+    weight = 6
+    parent = "author"
+    url = "/author/program_policy/"
+
+[[menu.main]]
   name = "選奨規定"
   weight = 7
   parent = "author"
   url = "/author/selection_criteria/"
+
+[[menu.main]]
+  name = "ISSシンポジウム・論文誌同時査読制度に基づく投稿の手引き"
+  weight = 8
+  parent = "author"
+  url = "/author/concurrent_review/"
 
 [[menu.main]]
   name = "スポンサー"
@@ -71,10 +83,22 @@ canonifyURLs = true
   url = "/en/author/submission/"
 
 [[languages.en.menu.main]]
+    name = "Program policy"
+    weight = 6
+    parent = "author"
+    url = "/en/author/program_policy/"
+
+[[languages.en.menu.main]]
   name = "Award Selection Criteria"
   weight = 7
   parent = "author"
   url = "/en/author/selection_criteria/"
+
+[[languages.en.menu.main]]
+  name = "ISS Symposium and Transactions Concurrent Review System"
+  weight = 8
+  parent = "author"
+  url = "/en/author/concurrent_review/"
 
 # ===============================
 
