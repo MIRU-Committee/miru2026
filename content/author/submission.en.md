@@ -102,8 +102,6 @@ Use the template provided below. It changed since last year, so make sure to dow
 
 
 # Submission Link 
-Please use the CMT portal (in preparation) to submit your manuscript.
-<!--
 Please use the CMT portal (https://cmt3.research.microsoft.com/MIRU2026) to submit your manuscript.
 Please refer to the slides below for detailed instructions.
 
@@ -111,6 +109,7 @@ Please refer to the slides below for detailed instructions.
 - [Instruction Slides (English)](https://docs.google.com/presentation/d/19p0WLts6fQZcJwQOwG2ZULpZ0Iyl18FS/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 - [Instruction Slides (Japanese)](https://docs.google.com/presentation/d/19QX8Yirw_dOQxNc6OIx50eloWWCexg4L/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 
+<!--
 ## Poster track
 - [Slides (English)]()
 - [Slides (Japanese)]()

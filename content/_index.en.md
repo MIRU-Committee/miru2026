@@ -6,8 +6,9 @@ title: "The 29th Meeting on Image Recognition and Understanding (MIRU2026)"
 The Meeting on Image Recognition and Understanding (MIRU) is the largest Japanese annual symposium on image recognition and understanding. Unrelated of whether you are at a university, private company, or just interested in top-notch research of this field; this is the place for meeting, collaborating, and socializing with researchers and professionals.
 
 ## News  
-- **2026.01.29**: The [award selection criteria](author/selection_criteria/) have been published.
-- **2025.11.25**: The [submission guidelines](author/submission/) have been published.
+- **2026.02.02**: Oral Presentation Track paper submissions are [now open](author/submission/). The [Program Policy](author/program_policy) and the [ISS Symposium and Transactions Concurrent Review System Guidelines](author/concurrent_review) have also been published.
+- **2026.01.29**: The [Award Selection Criteria](author/selection_criteria/) have been published.
+- **2025.11.25**: The [Submission Guidelines](author/submission/) have been published.
 - **2025.07.31**: MIRU2026 website is online.
 
 ## Dates  
