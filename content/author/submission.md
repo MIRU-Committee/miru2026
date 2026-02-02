@@ -96,11 +96,13 @@ IEICE論文誌の採択基準：\
 
 # 投稿方法
 投稿はCMT（準備中）で受け付けます。
-<!-- CMTの使い方は下記スライドを参照してください。
+<!--
+投稿はCMT (https://cmt3.research.microsoft.com/MIRU2026) で受け付けます。
+CMTの使い方は下記スライドを参照してください。
 
-## 口頭発表論文の場合
-- [スライド日本語]()
-- [スライド英語]()
+### 口頭発表論文の場合
+- [スライド日本語](https://docs.google.com/presentation/d/19QX8Yirw_dOQxNc6OIx50eloWWCexg4L/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
+- [スライド英語](https://docs.google.com/presentation/d/19p0WLts6fQZcJwQOwG2ZULpZ0Iyl18FS/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 
 ## 一般論文の場合
 - [スライド日本語]()
