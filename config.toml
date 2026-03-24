@@ -53,6 +53,17 @@ canonifyURLs = true
   url = "/author/concurrent_review/"
 
 [[menu.main]]
+  name = "プログラム"
+  weight = 4
+  identifier = "program"
+
+[[menu.main]]
+  name = "若手プログラム"
+  weight = 11
+  parent = "program"
+  url = "https://sites.google.com/view/miru2026wakate"
+
+[[menu.main]]
   name = "スポンサー"
   weight = 5
   identifier = "sponsor"
@@ -83,7 +94,7 @@ canonifyURLs = true
   url = "/en/author/submission/"
 
 [[languages.en.menu.main]]
-    name = "Program policy"
+    name = "Program Policy"
     weight = 6
     parent = "author"
     url = "/en/author/program_policy/"
@@ -99,6 +110,17 @@ canonifyURLs = true
   weight = 8
   parent = "author"
   url = "/en/author/concurrent_review/"
+
+[[languages.en.menu.main]]
+  name = "Program"
+  weight = 4
+  identifier = "program"
+
+[[languages.en.menu.main]]
+  name = "Wakate Program"
+  weight = 11
+  parent = "program"
+  url = "https://sites.google.com/view/miru2026wakate"
 
 # ===============================
 
