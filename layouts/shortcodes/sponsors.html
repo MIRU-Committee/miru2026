@@ -1,103 +1,42 @@
-<h3>{{ i18n "platinumsponsor" }}</h3>
+{{ $url := "https://script.google.com/macros/s/AKfycbzFxj_Sao5VwfKol_gqhiz_MrDEX0KnNo0eo1IQ6lEw8OMuIHPWFfvw4quo3RT3UzXrGg/exec?sheet=sponsors" }}
+{{ $res := resources.GetRemote $url }}
 
-<div class="container text-center">
-    <div class="row align-items-center">
-        <div class="col-md-6 my-3 px-5">
-            <a href="https://www.d-itlab.co.jp/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/platinum/p01_denso-itlab_500x300.png" class="img-fluid" alt="p01_denso-itlab">
-            </a>
-        </div>
-        <div class="col-md-6 my-3 px-5">
-            <a href="https://www.konicaminolta.com/jp-ja/index.html" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/platinum/p02_konicaminolta_500x300.png" class="img-fluid" alt="p02_konicaminolta">
-            </a>
-        </div>
-        <div class="col-md-6 my-3 px-5">
-            <img src="{{ .Site.BaseURL }}/sponsors/platinum/p03_hpctech_500x300.png" class="img-fluid" alt="p03_hpctech">
-        </div>
-    </div>
-</div>
+{{ if $res }}
+  {{ $data := $res.Content | transform.Unmarshal }}
 
-<h3>{{ i18n "goldsponsor" }}</h3>
+  {{/* 各ランクの設定（i18nのキー、グリッド幅、スプレッドシート上の値） */}}
+  {{ $rankConfigs := slice 
+    (dict "id" "platinum" "i18n" "platinumsponsor" "col" "col-md-6")
+    (dict "id" "gold"     "i18n" "goldsponsor"     "col" "col-md-4")
+    (dict "id" "silver"   "i18n" "silversponsor"   "col" "col-md-3")
+  }}
 
-<div class="container text-center">
-    <div class="row align-items-center">
-        <div class="col-md-4 my-3 px-5">
-            <a href="https://dena.ai/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/gold/g01_dena_500x300.png" class="img-fluid" alt="g01_dena">
-            </a>
-        </div>
-        <div class="col-md-4 my-3 px-5">
-            <a href="https://tur.ing/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/gold/g02_turing-motors.webp" class="img-fluid" alt="g02_turing-motors">
-            </a>
-        </div>
-        <div class="col-md-4 my-3 px-5">
-            <a href="https://jpn.nec.com/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/gold/g03_nec_500x300.png" class="img-fluid" alt="g03_nec">
-            </a>
-        </div>
-        <div class="col-md-4 my-3 px-5">
-            <a href="https://mantra.co.jp/ja/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/gold/g04_mantra_500x300.webp" class="img-fluid" alt="g04_mantra">
-            </a>
-        </div>
-        <div class="col-md-4 my-3 px-5">
-            <a href="https://www.forcesteed.com/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/gold/g05_forcesteed-robotics_500x300.png" class="img-fluid" alt="g05_forcesteed-robotics">
-            </a>
-        </div>
-        <div class="col-md-4 my-3 px-5">
-            <a href="https://www.omron.com/jp/ja/technology/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/gold/g06_omron_500x300.png" class="img-fluid" alt="g06_omron">
-            </a>
-        </div>
-        <div class="col-md-4 my-3 px-5">
-            <a href="https://www.nissan-global.com/JP/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/gold/g07_nissan_500x300.png" class="img-fluid" alt="g07_nissan">
-            </a>
-        </div>
-    </div>
-</div>
+  {{ range $rankConfigs }}
+    {{ $cfg := . }}
+    {{/* ランクでフィルタリング */}}
+    {{ $filtered := where $data "rank" $cfg.id }}
 
-<h3>{{ i18n "silversponsor" }}</h3>
+    {{ if $filtered }}
+      <h3>{{ i18n $cfg.i18n }}</h3>
+      <div class="container text-center">
+        <div class="row align-items-center">
+          {{ range $filtered }}
+            <div class="{{ $cfg.col }} my-3 px-5">
+              {{ if .href }}
+                <a href="{{ .href }}" target="_blank">
+                  <img src="{{ relURL (printf "sponsors/%s/%s" .rank .image) }}" class="img-fluid" alt="{{ .alt }}">
+                </a>
+              {{ else }}
+                {{/* リンクがない場合の考慮 */}}
+                <img src="{{ relURL (printf "sponsors/%s/%s" .rank .image) }}" class="img-fluid" alt="{{ .alt }}">
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
 
-<div class="container text-center">
-    <div class="row align-items-center">
-        <div class="col-md-3 my-3 px-5">
-            <a href="https://go-drive.co.jp/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/silver/s01_go-drive_500x300.png" class="img-fluid" alt="s01_go-drive">
-            </a>
-        </div>
-        <div class="col-md-3 my-3 px-5">
-            <a href="https://www.polyphony.co.jp/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/silver/s02_polyphony-digital.svg" class="img-fluid" alt="s02_polyphony-digital">
-            </a>
-        </div>
-        <div class="col-md-3 my-3 px-5">
-            <a href="https://www.fastaccounting.jp/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/silver/s03_fastaccounting_500x300.png" class="img-fluid" alt="s03_fastaccounting">
-            </a>
-        </div>
-        <div class="col-md-3 my-3 px-5">
-            <a href="https://netcompass.jp" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/silver/s04_netcompass.webp" class="img-fluid" alt="s04_netcompass">
-            </a>
-        </div>
-        <div class="col-md-3 my-3 px-5">
-            <a href="https://stockmark.co.jp/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/silver/s05_stockmark_500x300.png" class="img-fluid" alt="s05_stockmark">
-            </a>
-        </div>
-        <div class="col-md-3 my-3 px-5">
-            <a href="https://qleandataset.visual-bank.co.jp/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/silver/s06_qlean-dataset_500x300.png" class="img-fluid" alt="s06_qlean-dataset">
-            </a>
-        </div>
-        <div class="col-md-3 my-3 px-5">
-            <a href="https://mindinadevice.com/" target="_blank">
-                <img src="{{ .Site.BaseURL }}/sponsors/silver/s07_mind-in-a-device_500x300.png" class="img-fluid" alt="s07_mind-in-a-device">
-            </a>
-        </div>
-    </div>
-</div>
+{{ else }}
+  <p class="text-center text-danger">スポンサーデータを読み込めませんでした。</p>
+{{ end }}
