@@ -11,7 +11,7 @@ draft: false
 - Executive co-chair: Akio Hayakawa (Sony Research Inc.)
 - Organization chair: Tomoya Sakai (Nagasaki Univ.)
 - Organization co-chair: Keita Takeda (Nagasaki Univ.)
-- Finance chair: Yoshihiko Mochizuki (Saitama Institute of Technology)
+- Finance chair: Yoshihiko Mochizuki (Tokyo Denki Univ.)
 - Publicity chair: Naoshi Kaneko (Tokyo Denki Univ.)
 - Publicity co-chair: Seiya Ito (NICT)
 - Publication chair: Rei Kawakami (Science Tokyo)
