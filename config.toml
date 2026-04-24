@@ -69,6 +69,12 @@ canonifyURLs = true
   identifier = "sponsor"
   url = "/sponsor/"
 
+[[menu.main]]
+  name = "お問い合わせ"
+  weight = 6
+  identifier = "contact"
+  url = "https://docs.google.com/forms/d/e/1FAIpQLSdYF0AUqw1wiJnK98sGD3F5lk3RfIN9hb3Kr57r_Anq4xnIWA/viewform"
+
 # ===============================
 
 [[languages.en.menu.main]]
@@ -121,6 +127,11 @@ canonifyURLs = true
   weight = 11
   parent = "program"
   url = "https://sites.google.com/view/miru2026wakate"
+
+[[languages.en.menu.main]]
+  name = "Contact"
+  weight = 5
+  url = "https://docs.google.com/forms/d/e/1FAIpQLSdYF0AUqw1wiJnK98sGD3F5lk3RfIN9hb3Kr57r_Anq4xnIWA/viewform"
 
 # ===============================
 
