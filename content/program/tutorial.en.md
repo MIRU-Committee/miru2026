@@ -7,7 +7,7 @@ title: "Tutorial"
 
 ![](/tutorial/tutorial1_fujii.png)
 
-### Speaker: Prof. Keisuke Fujii (Graduate School of Informatics, Nagoya University/CyberAgent)
+### Speaker: Prof. Keisuke Fujii (Graduate School of Informatics, Nagoya University / CyberAgent)
 
 ### Title: Frontiers in Sports AI Research
 
