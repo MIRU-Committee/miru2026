@@ -58,6 +58,12 @@ canonifyURLs = true
   identifier = "program"
 
 [[menu.main]]
+  name = "チュートリアル"
+  weight = 3
+  parent = "program"
+  url = "/program/tutorial/"
+
+[[menu.main]]
   name = "若手プログラム"
   weight = 11
   parent = "program"
@@ -121,6 +127,12 @@ canonifyURLs = true
   name = "Program"
   weight = 4
   identifier = "program"
+
+[[languages.en.menu.main]]
+  name = "Tutorial"
+  weight = 3
+  parent = "program"
+  url = "/en/program/tutorial/"
 
 [[languages.en.menu.main]]
   name = "Wakate Program"
