@@ -4,10 +4,10 @@ draft: false
 ---
 
 # Organizing commitee
-- General chair: Hideo Saito (Keio Univ.)
-- Program chair: Masashi Nishiyama (Tottori Univ.)
+- General chair: Hideo Saito (Keio Univ.), Takahiro Okabe (Okayama Univ.)
+- Program chair: Masashi Nishiyama (Tottori Univ.), Yuta Nakashima (Univ. of Osaka)
 - Program co-chair: Kei Shimonishi (Kyoto Univ.)
-- Executive chair: Masato Ishii (Sony Research Inc.)
+- Executive chair: Masato Ishii (Sony Research Inc.), Ikuhisa Mitsugami (Ritsumeikan Univ.)
 - Executive co-chair: Akio Hayakawa (Sony Research Inc.)
 - Organization chair: Tomoya Sakai (Nagasaki Univ.)
 - Organization co-chair: Keita Takeda (Nagasaki Univ.)
