@@ -64,6 +64,12 @@ canonifyURLs = true
   url = "/program/tutorial/"
 
 [[menu.main]]
+  name = "スポンサーイベント"
+  weight = 6
+  parent = "program"
+  url = "/program/sponsor-events/"
+
+[[menu.main]]
   name = "若手プログラム"
   weight = 11
   parent = "program"
@@ -133,6 +139,12 @@ canonifyURLs = true
   weight = 3
   parent = "program"
   url = "/en/program/tutorial/"
+
+[[languages.en.menu.main]]
+  name = "Sponsor Events"
+  weight = 6
+  parent = "program"
+  url = "/en/program/sponsor-events/"
 
 [[languages.en.menu.main]]
   name = "Wakate Program"

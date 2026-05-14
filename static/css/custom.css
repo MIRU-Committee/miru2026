@@ -7,3 +7,40 @@
     font-size: 1.2rem;
     line-height: 1.8;
 }
+
+.event-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin: 2rem 0;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.event-image {
+  width: 180px;
+  height: auto;
+  object-fit: cover;
+}
+
+.event-text {
+  flex: 1;
+}
+
+.event-text h3, h4 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+/* スマホでは縦並び */
+@media (max-width: 600px) {
+  .event-item {
+    flex-direction: column;
+  }
+
+  .event-image {
+    width: 100%;
+    max-width: 300px;
+  }
+}
