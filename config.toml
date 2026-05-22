@@ -23,6 +23,8 @@ canonifyURLs = true
   parent = "organization"
   url = "/organization/committee/"
 
+# ===============================
+
 [[menu.main]]
   name = "著者"
   weight = 2
@@ -52,10 +54,24 @@ canonifyURLs = true
   parent = "author"
   url = "/author/concurrent_review/"
 
+#[[menu.main]]
+#  name = "招待講演推薦"
+#  weight = 9
+#  parent = "author"
+#  url = "/author/nomination_for_invited_talk/"
+
+# ===============================
+
 [[menu.main]]
   name = "プログラム"
   weight = 4
   identifier = "program"
+
+[[menu.main]]
+  name = "タイムテーブル"
+  weight = 1
+  parent = "program"
+  url = "/program/timetable/"
 
 [[menu.main]]
   name = "チュートリアル"
@@ -74,6 +90,8 @@ canonifyURLs = true
   weight = 11
   parent = "program"
   url = "https://sites.google.com/view/miru2026wakate"
+
+# ===============================
 
 [[menu.main]]
   name = "スポンサー"
@@ -99,6 +117,8 @@ canonifyURLs = true
   weight = 1
   parent = "organization"
   url = "/en/organization/committee/"
+
+# ===============================
 
 [[languages.en.menu.main]]
   name = "Author"
@@ -129,10 +149,24 @@ canonifyURLs = true
   parent = "author"
   url = "/en/author/concurrent_review/"
 
+#[[languages.en.menu.main]]
+#  name = "Nomination for Invited Talk"
+#  weight = 9
+#  parent = "author"
+#  url = "/en/author/nomination_for_invited_talk/"
+
+# ===============================
+
 [[languages.en.menu.main]]
   name = "Program"
   weight = 4
   identifier = "program"
+
+[[languages.en.menu.main]]
+  name = "Timetable"
+  weight = 1
+  parent = "program"
+  url = "/en/program/timetable/"
 
 [[languages.en.menu.main]]
   name = "Tutorial"
