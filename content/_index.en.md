@@ -9,6 +9,7 @@ The Meeting on Image Recognition and Understanding (MIRU) is the largest Japanes
 - **2026.05.22**: The tentative [Timetable](program/timetable/) has been published.
 - **Program Information:** The first day, August 3, is scheduled to begin in the afternoon and will include tutorials, lectures, etc. A tentative timetable will be available by the end of May.
 - **2026.05.14**: The [Sponsor Events](program/sponsor-events/) page has been published.
+- **2026.04.28**: The [Tutorial](program/tutorial/) session page is now available.
 - **2026.03.23**: The [Wakate Program](https://sites.google.com/view/miru2026wakate) website has been launched.
 - **2026.02.02**: Oral Presentation Track paper submissions are [now open](author/submission/). The [Program Policy](author/program_policy) and the [ISS Symposium and Transactions Concurrent Review System Guidelines](author/concurrent_review) have also been published.
 - **2026.01.29**: The [Award Selection Criteria](author/selection_criteria/) have been published.
