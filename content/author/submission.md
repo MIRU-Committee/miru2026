@@ -102,15 +102,13 @@ CMTの使い方は下記スライドを参照してください。
 - [スライド日本語](https://docs.google.com/presentation/d/19QX8Yirw_dOQxNc6OIx50eloWWCexg4L/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 - [スライド英語](https://docs.google.com/presentation/d/19p0WLts6fQZcJwQOwG2ZULpZ0Iyl18FS/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 
-<!--
-## 一般論文の場合
-- [スライド日本語]()
-- [スライド英語]()
+### 一般論文（ポスター）の場合
+- [スライド日本語](https://docs.google.com/presentation/d/1ca8FaW9zq8LVQOiaFoSYI08b4FhgjFjZ/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
+- [スライド英語](https://docs.google.com/presentation/d/17eKSqMaSLlIwx-NKk6MY123_K37fTy0k/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 
-## デモ論文の場合
-- [スライド日本語]()
-- [スライド英語]()
--->
+### デモ論文の場合
+- [スライド日本語](https://docs.google.com/presentation/d/1CbsmvNnvVAFKDw2YsWwmX8nIBnorDwZq/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
+- [スライド英語](https://docs.google.com/presentation/d/1EckC0S-dO1HIMSvrYZeXRIQODgySnzJy/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 
 # 募集分野
 

@@ -109,15 +109,13 @@ Please refer to the slides below for detailed instructions.
 - [Instruction Slides (English)](https://docs.google.com/presentation/d/19p0WLts6fQZcJwQOwG2ZULpZ0Iyl18FS/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 - [Instruction Slides (Japanese)](https://docs.google.com/presentation/d/19QX8Yirw_dOQxNc6OIx50eloWWCexg4L/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 
-<!--
-## Poster track
-- [Slides (English)]()
-- [Slides (Japanese)]()
+### Poster track
+- [Slides (English)](https://docs.google.com/presentation/d/17eKSqMaSLlIwx-NKk6MY123_K37fTy0k/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
+- [Slides (Japanese)](https://docs.google.com/presentation/d/1ca8FaW9zq8LVQOiaFoSYI08b4FhgjFjZ/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 
-## Demo track
-- [Slides (English)]()
-- [Slides (Japanese)]()
--->
+### Demo track
+- [Slides (English)](https://docs.google.com/presentation/d/1EckC0S-dO1HIMSvrYZeXRIQODgySnzJy/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
+- [Slides (Japanese)](https://docs.google.com/presentation/d/1CbsmvNnvVAFKDw2YsWwmX8nIBnorDwZq/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)
 
 # Submission Areas
 

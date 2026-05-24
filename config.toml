@@ -54,11 +54,11 @@ canonifyURLs = true
   parent = "author"
   url = "/author/concurrent_review/"
 
-#[[menu.main]]
-#  name = "招待講演推薦"
-#  weight = 9
-#  parent = "author"
-#  url = "/author/nomination_for_invited_talk/"
+[[menu.main]]
+  name = "招待講演推薦"
+  weight = 9
+  parent = "author"
+  url = "/author/nomination_for_invited_talk/"
 
 # ===============================
 
@@ -149,11 +149,11 @@ canonifyURLs = true
   parent = "author"
   url = "/en/author/concurrent_review/"
 
-#[[languages.en.menu.main]]
-#  name = "Nomination for Invited Talk"
-#  weight = 9
-#  parent = "author"
-#  url = "/en/author/nomination_for_invited_talk/"
+[[languages.en.menu.main]]
+  name = "Nomination for Invited Talk"
+  weight = 9
+  parent = "author"
+  url = "/en/author/nomination_for_invited_talk/"
 
 # ===============================
 
