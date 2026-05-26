@@ -23,6 +23,12 @@ canonifyURLs = true
   parent = "organization"
   url = "/organization/committee/"
 
+[[menu.main]]
+  name = "ロゴについて"
+  weight = 2
+  parent = "organization"
+  url = "/organization/logo/"
+
 # ===============================
 
 [[menu.main]]
@@ -117,6 +123,12 @@ canonifyURLs = true
   weight = 1
   parent = "organization"
   url = "/en/organization/committee/"
+
+[[languages.en.menu.main]]
+  name = "Logo Usage"
+  weight = 2
+  parent = "organization"
+  url = "/en/organization/logo/"
 
 # ===============================
 
