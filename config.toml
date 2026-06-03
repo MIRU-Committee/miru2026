@@ -69,6 +69,25 @@ canonifyURLs = true
 # ===============================
 
 [[menu.main]]
+  name = "参加"
+  weight = 3
+  identifier = "attend"
+
+[[menu.main]]
+  name = "参加登録"
+  weight = 1
+  parent = "attend"
+  url = "/attend/registration/"
+
+[[menu.main]]
+  name = "託児室"
+  weight = 4
+  parent = "attend"
+  url = "/attend/nursery/"
+
+# ===============================
+
+[[menu.main]]
   name = "プログラム"
   weight = 4
   identifier = "program"
@@ -166,6 +185,25 @@ canonifyURLs = true
   weight = 9
   parent = "author"
   url = "/en/author/nomination_for_invited_talk/"
+
+# ===============================
+
+[[languages.en.menu.main]]
+  name = "Attend"
+  weight = 3
+  identifier = "attend"
+
+[[languages.en.menu.main]]
+  name = "Registration"
+  weight = 1
+  parent = "attend"
+  url = "/en/attend/registration/"
+
+[[languages.en.menu.main]]
+  name = "Nursery room"
+  weight = 4
+  parent = "attend"
+  url = "/en/attend/nursery/"
 
 # ===============================
 
