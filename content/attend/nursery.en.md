@@ -28,7 +28,7 @@ Free
 - Actual costs such as diapers and any overtime fees outside the hours above are not included.
 
 ### Application
-<a href="https://forms.cloud.microsoft/r/1RWM76619s" class="button-link">
+<a href="https://forms.cloud.microsoft/r/1RWM76619s" class="button-link" target="_blank">
   Agree to the Terms and Reserve
 </a>
 

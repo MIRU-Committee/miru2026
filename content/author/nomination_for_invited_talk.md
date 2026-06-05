@@ -12,7 +12,7 @@ title: "招待講演推薦"
 
 推薦はCMT上で実施します。以下のボタンからCMTにログイン頂き、推薦をお願いします。利用方法は[こちら](https://docs.google.com/presentation/d/1KFrBvxYibSAR0xAN3bQM1s1KmybiZtnd/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)を参照ください。  
 
-<a href="https://cmt3.research.microsoft.com/MIRU2026" class="button-link">
+<a href="https://cmt3.research.microsoft.com/MIRU2026" class="button-link" target="_blank">
   招待講演推薦フォーム
 </a>
 

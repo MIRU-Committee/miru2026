@@ -5,11 +5,15 @@ title: "Registration"
 
 <!-- # [Registration Application Page](https://reg-cloud.com/miru2026/Entry/RegTop.aspx) -->
 
-# Registration Application Page (Scheduled to open on June 8)
+## Registration Application Page (Opened on June 8)
+
+<a href="https://reg-cloud.com/miru2026/Entry/RegTop.aspx" class="button-link" target="_blank">
+  Registration
+</a>
 
 MIRU2026 will be held **on-site as a general rule**. Please note that remote streaming will not be available.
 
-# Participation Fee
+## Participation Fee
 
 MIRU2026 has set the following participation fees.
 
@@ -55,7 +59,7 @@ MIRU2026 has set the following participation fees.
 - All prices include tax.
 - Registration entitles you to receive a copy of the Extended Abstracts (electronic data) and participate in all sessions, including tutorials.
 
-# Registration Categories
+## Registration Categories
 
 Please refer to the following details to determine which registration category you fall under.
 
@@ -74,7 +78,7 @@ We encourage you to take this opportunity to become a member of IPSJ or IEICE an
 - **Senior** refers to individuals who are 65 years of age or older as of April 1, 2026.
 
 
-# Important Notes
+## Important Notes
 
 - At least one author of each paper must register under **PRMU or CVIM Member** or **Regular**.
 - One **PRMU or CVIM Member** or **Regular** registration may be linked to multiple papers. There is no limit to the number of papers that can be linked. For example, if two students from the same laboratory each submit one paper as the first author, their supervising co-author should register under one of the above categories and link all paper numbers to that registration.
@@ -83,17 +87,17 @@ We encourage you to take this opportunity to become a member of IPSJ or IEICE an
 - <font color="red">Please note that registration cannot be canceled after completion.</font>
 - The Extended Abstract is a closed document, so please do not redistribute it.
 
-# Payment Method
+## Payment Method
 
 Please make a credit card payment at the time of registration. (The only payment method available is credit card.)
 
-# Registration Process
+## Registration Process
 
 1. Please enter the required information on the application page and make a credit card payment.
 1. After registration and credit card payment, we will send your registration details via email.
 1. Regarding receipts, you are able to issue receipts yourself from the URL provided in the email. For more details on receipts, please read the FAQ below.
 
-# FAQs Regarding Registration
+## FAQs Regarding Registration
 - **Q. About receipts**
     - A. A URL for issuing receipts will be sent via email after registration. Please log in with your reception number and password.
         - How to issue a receipt
@@ -139,13 +143,13 @@ Please make a credit card payment at the time of registration. (The only payment
     - A. Recording, screen capturing, or taking screenshots may be prohibited at the request of the presenter. If such prohibited conduct is discovered, we may refuse your participation in future events.
 
 
-# Accompanying Participants
+## Accompanying Participants
 - Family of a registered participant who is junior high school age or younger can accompany the registrant for free. Note, that we also provide a nursery service for younger participants. Please check the information on the [nursery service](/en/attend/nursery).
 - For participants with disabilities, diseases, pregnancy, or similar reasons needing an accompanying person, or if there are other reasons which might make you eligible for an accompanying person, please discuss your circumstances with the organizing committee through the [contact form](https://docs.google.com/forms/d/e/1FAIpQLSdYF0AUqw1wiJnK98sGD3F5lk3RfIN9hb3Kr57r_Anq4xnIWA/viewform).
 - The above companions do not need to register to participate (no participation fee applies).
 
 
-# Contact
+## Contact
 - **Inquiries regarding registration categories:**  
     MIRU2026 Organizing Committee ([contact form](https://docs.google.com/forms/d/e/1FAIpQLSdYF0AUqw1wiJnK98sGD3F5lk3RfIN9hb3Kr57r_Anq4xnIWA/viewform))
 - **Inquiries regarding payment:**
@@ -156,7 +160,7 @@ Please make a credit card payment at the time of registration. (The only payment
     [Office hours] Mon-Fri, 10:00-16:00 (excluding holidays)
     ```
 
-# Disclaimer
+## Disclaimer
 - MIRU2026 does not compensate participants for any damage caused by force majeure such as natural disasters.
 - The copyrights for presentation materials (including text, images, videos, audio, etc.) belong entirely to the presenter. Reuse, modification, distribution, and broadcasting of these is prohibited.
 - Additionally, at the request of the presenter, capturing and recording may also be prohibited. If such actions or misuse are discovered, the MIRU Committee may ask the individual to refrain from participating for the rest of the conference.

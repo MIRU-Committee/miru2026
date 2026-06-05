@@ -12,7 +12,7 @@ Please note that if we receive a large number of nominations, selections will be
 
 Nominations will be conducted via CMT. Please log in using the button below, and nominate the paper. Please refer to [this page](https://docs.google.com/presentation/d/19_IN5E8DKTbKk_MgT4oE7dgUkC8Shaxq/edit) for instructions on how to use the system.
 
-<a href="https://cmt3.research.microsoft.com/MIRU2026" class="button-link">
+<a href="https://cmt3.research.microsoft.com/MIRU2026" class="button-link" target="_blank">
   Nomination
 </a>
 

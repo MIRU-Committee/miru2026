@@ -27,7 +27,7 @@ title: "託児室"
 - おむつなどの実費及び上記時間外の延長料金は除きます。
 
 ### 申込み先
-<a href="https://forms.cloud.microsoft/r/1RWM76619s" class="button-link">
+<a href="https://forms.cloud.microsoft/r/1RWM76619s" class="button-link" target="_blank">
   利用の規約に同意し、予約する
 </a>
 
