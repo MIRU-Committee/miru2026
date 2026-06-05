@@ -8,6 +8,8 @@ title: "招待講演推薦"
 - 2026年8月3日～8月6日に開催される招待講演セッションにて、厳しい競争と査読に耐えうる研究・論文に仕上げたご経験について5分間の口頭発表を行う（旅費・宿泊費の支給はございません。ただし、MIRU2026での発表が招待講演のみである方の場合、 参加登録費については不要といたします。）
 - 口頭発表と同一日の午後に開催されるインタラクティブセッションにおいて、ポスター発表を行う
 
+※招待講演数が多い場合は、講演時間を調整する可能性がございます。
+
 推薦はCMT上で実施します。以下のボタンからCMTにログイン頂き、推薦をお願いします。利用方法は[こちら](https://docs.google.com/presentation/d/1KFrBvxYibSAR0xAN3bQM1s1KmybiZtnd/edit?usp=sharing&ouid=103584822397115306765&rtpof=true&sd=true)を参照ください。  
 
 <a href="https://cmt3.research.microsoft.com/MIRU2026" class="button-link">
