@@ -93,6 +93,12 @@ canonifyURLs = true
   identifier = "program"
 
 [[menu.main]]
+    name = "特別講演"
+    weight = 2
+    parent = "program"
+    url = "/program/keynote/"
+
+[[menu.main]]
   name = "タイムテーブル"
   weight = 1
   parent = "program"
@@ -200,7 +206,7 @@ canonifyURLs = true
   url = "/en/attend/registration/"
 
 [[languages.en.menu.main]]
-  name = "Nursery room"
+  name = "Nursery Room"
   weight = 4
   parent = "attend"
   url = "/en/attend/nursery/"
