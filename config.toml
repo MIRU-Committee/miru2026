@@ -85,6 +85,12 @@ canonifyURLs = true
   parent = "attend"
   url = "/attend/nursery/"
 
+[[menu.main]]
+  name = "出張パック"
+  weight = 5
+  parent = "attend"
+  url = "/attend/travel_package/"
+
 # ===============================
 
 [[menu.main]]
@@ -210,6 +216,12 @@ canonifyURLs = true
   weight = 4
   parent = "attend"
   url = "/en/attend/nursery/"
+
+[[languages.en.menu.main]]
+  name = "Travel Package"
+  weight = 5
+  parent = "attend"
+  url = "/en/attend/travel_package/"
 
 # ===============================
 
