@@ -11,7 +11,7 @@
 .event-item {
   display: flex;
   gap: 1.5rem;
-  align-items: flex-start;
+  align-items: center;
   margin: 2rem 0;
   border: 1px solid #ccc;
   padding: 1rem;
@@ -28,7 +28,8 @@
   flex: 1;
 }
 
-.event-text h3, h4 {
+.event-text h3,
+.event-text h4 {
   margin-top: 0;
   margin-bottom: 0.4rem;
 }
