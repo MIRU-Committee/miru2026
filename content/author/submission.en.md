@@ -17,7 +17,6 @@ draft: false
 
 {{< figure src="/submission_pipeline.png" imgclass="img-fluid" >}}
 
-
 1.	Submissions to the oral presentation track will be evaluated by the paper evaluation committee. Based on the results, it will be presented either in Track A, which has both oral and poster presentations, or in Track B, which is jointly presented with Track C as a poster presentation in an interactive session. The camera ready deadline for all tracks is 6/22. 
 
 2. If you submit to the oral presentation track and want the paper to be considered for the IEICE journal, please submit it through the IEICE website to the journal track. The evaluation process is the same as for MIRU2026. If it is judged as suitable for journal publication, it can be published in a cooperated IEICE journal (Letter). Note, that the review guidelines for MIRU2026 and IEICE Journals do not match, so they might yield different outcomes. In this case, authors are responsible for publication fees. For more details, please refer to the [ISS Symposium and Transactions Concurrent Review System](/en/author/concurrent_review) guidelines.
@@ -29,6 +28,8 @@ Japanese: [https://www.ieice.org/jpn/shiori/iss_5_1.html#5.1](https://www.ieice.
 3.	For poster track submissions without paper evaluations, please submit to Track C. You will be able to present your work as a poster in an interactive session. The submission deadline is 6/22. 
 
 4.	In case you need a larger setup than a poster plus a laptop or tablet (e.g., cameras, sensors, VR setups, etc.), please submit your paper to the Track D as a demo presentation. For demo presentations, in addition to a poster panel, you can receive a desk and power supply. The submission deadline is 6/22.
+
+5. For presentation categories B and C (poster presentations), you only need to submit the manuscript to be included in the MIRU Extended Abstracts. You do not need to submit the poster data in advance on CMT or elsewhere as supplementary material. Details on the poster format and display method will be provided later in the instructions for presenters.
 
 
 # Style Guidelines
