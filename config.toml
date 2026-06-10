@@ -117,6 +117,12 @@ canonifyURLs = true
   url = "/program/tutorial/"
 
 [[menu.main]]
+  name = "ワークライフバランスイベント"
+  weight = 4
+  parent = "program"
+  url = "https://miru2026.github.io/WorkLifeBalance/index_JP.html"
+
+[[menu.main]]
   name = "スポンサーイベント"
   weight = 6
   parent = "program"
@@ -237,10 +243,16 @@ canonifyURLs = true
   url = "/en/program/timetable/"
 
 [[languages.en.menu.main]]
-  name = "Tutorial"
+  name = "Tutorials"
   weight = 3
   parent = "program"
   url = "/en/program/tutorial/"
+
+[[languages.en.menu.main]]
+  name = "Work Life Balance Event"
+  weight = 4
+  parent = "program"
+  url = "https://miru2026.github.io/WorkLifeBalance/index.html"
 
 [[languages.en.menu.main]]
   name = "Sponsor Events"
