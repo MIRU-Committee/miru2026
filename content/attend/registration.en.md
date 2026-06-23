@@ -76,6 +76,7 @@ Please refer to the following details to determine which registration category y
 - **Regular (IEICE or IPSJ Member)** refers to members of IEICE or IPSJ. However, if you fall under the "PRMU or CVIM Member" category listed above, you may register at that rate.
 We encourage you to take this opportunity to become a member of IPSJ or IEICE and also register for the relevant SIG.
 - **Senior** refers to individuals who are 65 years of age or older as of April 1, 2026.
+- **Student** refers to individuals who hold student status as of the dates of MIRU2026. 
 
 
 ## Important Notes
