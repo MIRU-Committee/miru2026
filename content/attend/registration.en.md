@@ -132,8 +132,8 @@ Please make a credit card payment at the time of registration. (The only payment
     - A. Yes, they can attend.
 - **Q. When registering for the event, I indicated whether I would attend the banquet and welcome reception. Can I change my response later?**
     - A. Yes, you can. The attendance response provided during registration is only a survey to help us estimate the number of participants, and is not an official registration for the banquet or welcome reception. Therefore, you may change your attendance decision depending on your schedule on the day of the event, without contacting the organizing committee.
-- **Q. Can you issue an invoice-compatible receipt?**
-    - A. Yes, we can.
+- **Q. Can you issue an invoice-compliant receipt?**
+    - A. Yes. An invoice-compliant receipt can be issued by [Seibu Travel Co., Ltd.](https://www.seibutravel.co.jp/) (Qualified Invoice Issuer Registration Number: T2013301006266).
 - **Q. Is lunch provided?**
     - A. Lunch is not provided. However, some events such as sponsor events may provide lunch. Please check the event page for more information.
 - **Q. Is there any compensation in case of bad weather?**
