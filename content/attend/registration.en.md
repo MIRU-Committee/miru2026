@@ -120,6 +120,8 @@ Please make a credit card payment at the time of registration. (The only payment
     - A. Generally, please determine based on your primary affiliation and purpose of participation (e.g., if the purpose is to present university research, the student category is appropriate).If you are unsure, please contact us via the [contact form](https://docs.google.com/forms/d/e/1FAIpQLSdYF0AUqw1wiJnK98sGD3F5lk3RfIN9hb3Kr57r_Anq4xnIWA/viewform).
 - **Q. I want to confirm which category to register in.**
     - A. Please check the page above. If you have any remaining questions, please reach out to the MIRU2026 organizing committee.
+- **Q. Do invited speakers need to register for MIRU2026?**
+    - A. Invited speakers whose only presentation at MIRU2026 is their invited talk do not need to register or pay the registration fee. However, if an invited speaker is also listed as an author of a paper, demo, or other presentation at MIRU2026 in addition to the invited talk, they must register and pay the registration fee as usual. Please note that this exemption applies only to the invited speaker themselves. If co-authors of the paper associated with the invited talk attend MIRU2026, they must register as usual.
 - **Q. I found out I cannot participate the event anymore. Can I refund?**
     - A. No, registrations are final and cannot be cancelled.
 - **Q. Are the banquet and welcome reception fees included in the registration fee?**
