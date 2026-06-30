@@ -6,7 +6,9 @@ _build:
 
 ## Invitation Links
 
-Please join the participant Slack workspace using one of the links below.
+Please join the MIRU2026 Slack workspace using one of the links below.
+- All links will take you to the same Slack workspace.
+- Each link has a limit on the number of invited participants, so if you are unable to join through one link, please try another.
 
 <a href="https://example.slack.com/..." class="button-link">
   Join Link 1
@@ -17,6 +19,9 @@ Please join the participant Slack workspace using one of the links below.
 <a href="https://example.slack.com/..." class="button-link">
   Join Link 3
 </a>
-
-- Each link has a maximum number of participants. If one link does not work, please try another.
-- Due to the expiration period of Slack invitation links, the links may be updated before the conference.
+<a href="https://example.slack.com/..." class="button-link">
+  Join Link 4
+</a>
+<a href="https://example.slack.com/..." class="button-link">
+  Join Link 5
+</a>

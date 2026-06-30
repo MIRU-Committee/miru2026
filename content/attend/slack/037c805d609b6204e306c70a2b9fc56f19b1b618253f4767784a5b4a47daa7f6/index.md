@@ -6,7 +6,9 @@ _build:
 
 ## 招待リンク
 
-以下のいずれかのリンクから、参加者用Slackワークスペースにご参加ください。
+以下のいずれかのリンクから、MIRU2026参加者用Slackワークスペースにご参加ください。  
+- どのリンクからでも同じSlackワークスペースに参加できます。
+- 各リンクには参加者数の上限があります。もし参加できなければ別のリンクをお試しください。
 
 <a href="https://example.slack.com/..." class="button-link">
   参加用リンク1
@@ -17,6 +19,9 @@ _build:
 <a href="https://example.slack.com/..." class="button-link">
   参加用リンク3
 </a>
-
-- 各リンクには参加者数の上限があります。機能しない場合には、別のリンクをお試しください。
-- Slack招待リンクは有効期限の都合により、会期前に更新される場合があります。
+<a href="https://example.slack.com/..." class="button-link">
+  参加用リンク4
+</a>
+<a href="https://example.slack.com/..." class="button-link">
+  参加用リンク5
+</a>

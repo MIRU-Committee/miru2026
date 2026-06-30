@@ -29,8 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = input.value;
     const hash = await sha256(password);
 
-    const basePath = window.location.pathname.replace(/\/$/, "");
-    const targetPath = `${basePath}/${hash}/`;
+    const targetBase = form.dataset.targetBase || window.location.pathname;
+    const normalizedTargetBase = targetBase.replace(/\/$/, "");
+    const targetPath = `${normalizedTargetBase}/${hash}/`;
 
     try {
       const exists = await checkPageExists(targetPath);
