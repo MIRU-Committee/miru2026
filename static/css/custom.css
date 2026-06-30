@@ -87,3 +87,24 @@
   font-size: 1.2rem;
   color: #666;
 }
+
+.password-page {
+  max-width: 640px;
+  margin: 2rem auto;
+}
+
+.password-form {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.password-input {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  padding: 0.6rem;
+  margin: 0.8rem 0 1rem;
+  font-size: 1rem;
+}
