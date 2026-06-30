@@ -6,4 +6,4 @@ _build:
 
 Please enter the password to view the invitation link to the participant Slack workspace.
 
-{{< password-auth >}}
+{{< password-auth target="miru2026/attend/slack/" >}}
