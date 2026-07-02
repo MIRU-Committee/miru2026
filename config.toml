@@ -86,8 +86,14 @@ canonifyURLs = true
   url = "/attend/nursery/"
 
 [[menu.main]]
-  name = "出張パック"
+  name = "Slackワークスペース"
   weight = 5
+  parent = "attend"
+  url = "/attend/slack_workspace/"
+
+[[menu.main]]
+  name = "出張パック"
+  weight = 6
   parent = "attend"
   url = "/attend/travel_package/"
 
@@ -224,8 +230,14 @@ canonifyURLs = true
   url = "/en/attend/nursery/"
 
 [[languages.en.menu.main]]
-  name = "Travel Package"
+  name = "Slack Workspace"
   weight = 5
+  parent = "attend"
+  url = "/en/attend/slack_workspace/"
+
+[[languages.en.menu.main]]
+  name = "Travel Package"
+  weight = 6
   parent = "attend"
   url = "/en/attend/travel_package/"
 
