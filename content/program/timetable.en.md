@@ -7,5 +7,5 @@ title: "Timetable"
     *This timetable is tentative and subject to change.
   </p>
 
-  {{< timetable >}}
+  <img src="/tentative_timetable.en.png" alt="tentative timetable">
 </div>
