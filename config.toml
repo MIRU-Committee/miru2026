@@ -4,6 +4,7 @@ title = 'MIRU2026'
 theme = "main"
 defaultContentLanguage = 'ja'
 canonifyURLs = true
+timeout = "180s"
 
 [markup]
   [markup.goldmark]
