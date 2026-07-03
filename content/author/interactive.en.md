@@ -13,7 +13,7 @@ title: "Interactive Presentations"
 
 ## Poster Mounting
 - Please mount your poster **on the day of your presentation** (not on any other days). The start time for poster mounting will be announced at a later date.
-<!-- - You can mount your poster anytime between 9:00 AM and the start of the interactive session on that day.-->
+You can mount your poster anytime between 9:00 AM and the start of the interactive session on that day.
 - After your presentation session, please remove your poster promptly and take it home. Posters may not be displayed on days other than your assigned presentation day.
 - If there are any posters left from the previous day, please inform an organizer present at the venue.
 
