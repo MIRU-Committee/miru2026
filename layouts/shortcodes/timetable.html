@@ -1,0 +1,1216 @@
+{{ $gasBaseURL := "https://script.google.com/macros/s/AKfycbzFxj_Sao5VwfKol_gqhiz_MrDEX0KnNo0eo1IQ6lEw8OMuIHPWFfvw4quo3RT3UzXrGg/exec" }}
+
+{{ $scheduleURL := printf "%s?sheet=schedule-test" $gasBaseURL }}
+{{ $presentationsURL := printf "%s?sheet=presentations-test" $gasBaseURL }}
+{{ $sessionitemsURL := printf "%s?sheet=session-items-test" $gasBaseURL }}
+{{ $colorSchemeURL := printf "%s?sheet=color_scheme" $gasBaseURL }}
+{{ $settingsURL := printf "%s?sheet=settings" $gasBaseURL }}
+
+{{ $scheduleData := slice }}
+{{ $presentationsData := slice }}
+{{ $sessionitemsData := slice }}
+{{ $colorSchemeData := slice }}
+{{ $settingsData := slice }}
+
+{{ with resources.GetRemote $scheduleURL }}
+  {{ $scheduleData = .Content | transform.Unmarshal }}
+{{ end }}
+{{ with resources.GetRemote $presentationsURL }}
+  {{ $presentationsData = .Content | transform.Unmarshal }}
+{{ end }}
+{{ with resources.GetRemote $sessionitemsURL }}
+  {{ $sessionitemsData = .Content | transform.Unmarshal }}
+{{ end }}
+{{ with resources.GetRemote $colorSchemeURL }}
+  {{ $colorSchemeData = .Content | transform.Unmarshal }}
+{{ end }}
+{{ with resources.GetRemote $settingsURL }}
+  {{ $settingsData = .Content | transform.Unmarshal }}
+{{ end }}
+
+<style>
+   [v-cloak] { display: none; }
+
+   /* ===== グリッド（表）のスタイル ===== */
+   .schedule {
+      display: grid;
+      grid-template-columns: 2.5rem repeat(6, 1fr); /* fallback: 1日あたり6分割 */
+      grid-template-rows: 2rem;
+      grid-auto-rows: 9px; /* Vue 側の scheduleGridStyle で上書き可能 */
+      gap: 4px;            /* Vue 側の scheduleGridStyle で上書き可能 */
+      font-family: "Yu Gothic", -apple-system, BlinkMacSystemFont, sans-serif;
+      margin-bottom: 3rem;
+   }
+
+   .row-sizer {
+      grid-column: 1 / -1;
+      height: 4rem;
+      visibility: hidden;
+      pointer-events: none;
+   }
+
+   /* 日付ヘッダ */
+   .day {
+      grid-row: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: #f1f3f5;
+      border: 1px solid #dee2e6;
+      padding: .3rem 0;
+      border-radius: 4px;
+   }
+
+   /* 時刻ラベル */
+   .time {
+      grid-column: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding-right: .4rem;
+      border-right: 2px solid #ced4da;
+      font-weight: 500;
+      white-space: nowrap;
+      font-size: 0.7rem;
+      color: #6c757d;
+   }
+
+   /* 各プログラム枠 */
+   .event {
+      border: 1px solid #adb5bd;
+      padding: .25rem .2rem;
+      overflow: hidden;
+      line-height: 1.3;
+      font-size: .8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #212529;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+   }
+
+   .event:hover {
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      transform: translateY(-1px);
+   }
+
+   .event a {
+      text-decoration: none;
+      font-weight: 500;
+   }
+
+   ruby rt { display: none; }
+
+   /* ===== 発表一覧（参考ページに近いシンプル表示） ===== */
+   .program-section {
+      margin-top: 4rem;
+   }
+
+   .program-day-heading {
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+   }
+
+   .program-session {
+      margin-bottom: 1.8rem;
+   }
+
+   .session-title {
+      font-weight: 600;
+   }
+
+   .session-meta {
+      margin-bottom: .4rem;
+      color: #555;
+   }
+
+   .program-list {
+      margin-left: 1rem;
+      padding-left: 0;
+   }
+
+   .program-list li {
+      margin-bottom: .6rem;
+   }
+
+   .presentation-id-badge {
+      display: inline-block;
+      width: 5rem;
+      margin-right: .5rem;
+      text-align: center;
+      vertical-align: middle;
+   }
+
+   .presentation-title {
+      font-weight: 500;
+   }
+
+   .presentation-author {
+      font-size: .9rem;
+      color: #555;
+   }
+
+   .presentation-search-fab {
+      position: fixed;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1040;
+      width: 3.25rem;
+      height: 3.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 2px solid #0d6efd;
+      background: #fff;
+      color: #0d6efd;
+      box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+      transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+   }
+
+   .presentation-search-fab:hover,
+   .presentation-search-fab:focus {
+      background: #0d6efd;
+      color: #fff;
+      transform: translateY(-50%) scale(1.06);
+      box-shadow: 0 0.55rem 1.25rem rgba(13, 110, 253, 0.35);
+   }
+
+   .presentation-search-fab.is-open {
+      background: #0d6efd;
+      color: #fff;
+   }
+
+   .presentation-search-fab .search-icon {
+      width: 1.35rem;
+      height: 1.35rem;
+      display: block;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+   }
+
+   .presentation-search-fab .search-hit-badge {
+      position: absolute;
+      top: -0.45rem;
+      right: -0.45rem;
+      min-width: 1.35rem;
+      height: 1.35rem;
+      padding: 0 .25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-size: .7rem;
+      font-weight: 600;
+   }
+
+   .presentation-search-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1044;
+      background: rgba(0, 0, 0, 0.25);
+   }
+
+   .presentation-search-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 1045;
+      width: min(24rem, calc(100vw - 2rem));
+      height: 100vh;
+      padding: 1.25rem;
+      background: #fff;
+      border-left: 1px solid #dee2e6;
+      box-shadow: -0.5rem 0 1.5rem rgba(0, 0, 0, 0.18);
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+   }
+
+   .presentation-search-drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+   }
+
+   .presentation-search-drawer-title {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+   }
+
+   .presentation-search-meta {
+      font-size: .85rem;
+      color: #6c757d;
+   }
+
+   .presentation-search-help {
+      font-size: .8rem;
+      color: #6c757d;
+      line-height: 1.5;
+   }
+
+   .presentation-no-results {
+      max-width: 48rem;
+   }
+
+
+   /* レスポンシブ（スマホ対応） */
+   @media (max-width: 768px) {
+      .schedule { font-size: 0.65rem; grid-auto-rows: 6px; gap: 2px; }
+      .day { font-size: 0.65rem; padding: .1rem 0; }
+      .time { font-size: 0.55rem; padding-right: .2rem; }
+      .event { font-size: 0.55rem; padding: 0; line-height: 1.1; }
+      .presentation-search-fab { right: .75rem; bottom: .75rem; top: auto; transform: none; }
+      .presentation-search-drawer { width: min(22rem, calc(100vw - 1rem)); padding: 1rem; }
+      .event i { display: none; }
+   }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
+
+<div id="timetableApp" class="w-100" v-cloak>
+   <div v-if="loading" class="text-center my-5">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="mt-2 text-muted" v-text="loadingText"></p>
+   </div>
+
+   <p v-if="errored" class="alert alert-danger" v-text="error"></p>
+
+   <div v-if="!loading && !errored">
+      <div class="schedule" :style="scheduleGridStyle">
+         <template v-for="day in dayHeaders">
+            <div
+               class="day"
+               :key="'day-' + day.date"
+               :style="{ gridColumn: dayColumnStart(day) + ' / span ' + maxTracks }"
+               v-text="day.label">
+            </div>
+         </template>
+
+         <template v-for="t in timeLabels">
+            <div
+               class="time"
+               :key="'time-' + t.text"
+               :style="{ gridRow: t.row + ' / span ' + t.span }"
+               v-text="t.text">
+            </div>
+         </template>
+
+         <template v-for="idx in totalRows">
+            <div
+               class="row-sizer"
+               :key="'row-sizer-' + idx"
+               :style="{ gridRow: idx + 1 }">
+            </div>
+         </template>
+
+         <template v-for="ev in events">
+            <div
+               class="event"
+               :key="ev.key"
+               :class="ev.type"
+               :style="eventStyle(ev)">
+               <a v-if="ev.show_program" :href="'#' + ev.session_code" class="text-dark">
+                  <i class="fas fa-info-circle me-1"></i>
+                  <span v-html="ev.label"></span>
+               </a>
+               <span v-else>
+                  <span v-html="ev.label"></span>
+               </span>
+            </div>
+         </template>
+      </div>
+
+      <button
+         type="button"
+         class="presentation-search-fab"
+         :class="{ 'is-open': presentationSearchPanelOpen }"
+         :aria-label="presentationSearchLabel"
+         :title="presentationSearchLabel"
+         @click="openPresentationSearch">
+         <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+         </svg>
+         <span
+            v-if="hasPresentationSearch"
+            class="badge bg-danger search-hit-badge"
+            v-text="presentationSearchHitCount">
+         </span>
+      </button>
+
+      <div
+         v-if="presentationSearchPanelOpen"
+         class="presentation-search-backdrop"
+         @click="closePresentationSearch">
+      </div>
+
+      <aside
+         v-if="presentationSearchPanelOpen"
+         class="presentation-search-drawer"
+         role="dialog"
+         aria-modal="true"
+         :aria-label="presentationSearchLabel">
+         <div class="presentation-search-drawer-header">
+            <h3 class="presentation-search-drawer-title" v-text="presentationSearchLabel"></h3>
+            <button
+               type="button"
+               class="btn-close"
+               :aria-label="presentationSearchCloseLabel"
+               @click="closePresentationSearch">
+            </button>
+         </div>
+
+         <input
+            ref="presentationSearchInput"
+            id="presentationSearchInput"
+            type="search"
+            class="form-control"
+            v-model.trim="presentationSearchQuery"
+            :placeholder="presentationSearchPlaceholder"
+            autocomplete="off"
+            @keydown.esc="closePresentationSearch">
+
+         <div class="d-flex gap-2">
+            <button
+               type="button"
+               class="btn btn-outline-secondary btn-sm"
+               :disabled="!presentationSearchQuery"
+               @click="clearPresentationSearch"
+               v-text="presentationSearchClearLabel">
+            </button>
+            <button
+               type="button"
+               class="btn btn-outline-primary btn-sm"
+               @click="closePresentationSearch"
+               v-text="presentationSearchApplyLabel">
+            </button>
+         </div>
+
+         <div class="presentation-search-meta" v-text="presentationSearchMeta"></div>
+         <div class="presentation-search-help" v-text="presentationSearchHelpText"></div>
+      </aside>
+
+      <div class="text-start program-section">
+         <p
+            v-if="hasPresentationSearch && presentationSearchHitCount === 0"
+            class="alert alert-warning presentation-no-results"
+            v-text="presentationSearchNoResultsText">
+         </p>
+
+         <template v-for="day in filteredDays">
+            <h2
+               :key="'heading-' + day.date"
+               class="program-day-heading">
+               <i class="fas fa-calendar-alt me-2"></i>
+               <span v-text="formatDate(day.date)"></span>
+            </h2>
+
+            <div
+               v-for="sess in day.sessions"
+               :key="sess.session_code"
+               class="program-session">
+               <h4 class="mb-1">
+                  <span class="session-title" v-text="sess.title"></span>
+               </h4>
+
+               <p class="small session-meta" :id="sess.session_code">
+                  <i class="fas fa-clock me-1"></i>
+                  <span v-text="sess.start + '–' + sess.end"></span>
+                  <span v-if="sess.venue"> | <span v-text="sess.venue"></span></span>
+                  <span v-if="sess.chair"> | <span v-text="chairLabel"></span>: <span v-text="sess.chair"></span></span>
+               </p>
+
+               <ul class="list-unstyled program-list">
+                  <li
+                     v-for="p in sess.presentations"
+                     :key="p.presentation_id">
+                     <span
+                        v-if="isTruthy(p.show_id)"
+                        class="badge bg-secondary presentation-id-badge"
+                        v-text="p.presentation_id">
+                     </span>
+                     <span class="presentation-title">
+                        <span
+                           v-if="isTruthy(p.show_paper_id) && p.paper_id"
+                           v-text="'Paper ID: ' + p.paper_id">
+                        </span>
+
+                        <span v-else>
+                           <a
+                              v-if="p.link"
+                              :href="p.link"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              v-text="p.title">
+                           </a>
+                           <span v-else v-text="p.title"></span>
+                        </span>
+                     </span>
+                     <br>
+                     <span
+                        v-if="!(isTruthy(p.show_paper_id) && p.paper_id)"
+                        class="presentation-author"
+                        v-text="p.authors">
+                     </span>
+                  </li>
+               </ul>
+            </div>
+         </template>
+      </div>
+   </div>
+</div>
+
+<script>
+   // Hugo のビルド時に取得して埋め込まれたデータ
+   const embeddedScheduleData = {{ $scheduleData | jsonify | safeJS }};
+   const embeddedPresentationsData = {{ $presentationsData | jsonify | safeJS }};
+   const embeddedSessionItemsData = {{ $sessionitemsData | jsonify | safeJS }};
+   const embeddedColorSchemeData = {{ $colorSchemeData | jsonify | safeJS }};
+   const embeddedSettingsData = {{ $settingsData | jsonify | safeJS }};
+
+   const CURRENT_LANG = '{{ .Page.Site.Language.Lang | default "ja" }}';
+   const JST_OFFSET_MS = 9 * 60 * 60 * 1000;
+   const GOOGLE_SHEETS_EPOCH_OFFSET_DAYS = 25569;
+
+   function getLangSuffix() {
+      if (CURRENT_LANG === 'ja') return 'jp';
+      return CURRENT_LANG || 'jp';
+   }
+
+   function toBool(value) {
+      return String(value).toLowerCase().trim() === 'true';
+   }
+
+   function toNumber(value, fallback) {
+      const n = Number(value);
+      return Number.isFinite(n) ? n : fallback;
+   }
+
+   // 文字列、オブジェクト配列、2次元配列のどれが来ても共通オブジェクト配列に変換する
+   function superNormalize(raw) {
+      if (!raw) return [];
+
+      if (typeof raw === 'string') {
+         try {
+            raw = JSON.parse(raw);
+         } catch (e) {
+            console.error('JSON parse error:', e);
+            return [];
+         }
+      }
+
+      if (raw && typeof raw === 'object' && !Array.isArray(raw)) {
+         if (Array.isArray(raw.values)) raw = raw.values;
+         else if (Array.isArray(raw.data)) raw = raw.data;
+      }
+
+      if (!Array.isArray(raw) || raw.length === 0) return [];
+
+      if (typeof raw[0] === 'object' && !Array.isArray(raw[0])) {
+         return raw.map(obj => {
+            const clean = {};
+            Object.keys(obj).forEach(k => {
+               clean[String(k).toLowerCase().trim()] = obj[k];
+            });
+            return clean;
+         });
+      }
+
+      if (Array.isArray(raw[0])) {
+         const headers = raw[0].map(h => String(h).toLowerCase().trim());
+         return raw.slice(1).map(row => {
+            const clean = {};
+            headers.forEach((key, i) => {
+               clean[key] = row[i] !== undefined ? row[i] : '';
+            });
+            return clean;
+         });
+      }
+
+      return [];
+   }
+
+   function parseSettings(rawData) {
+      const settings = {};
+      superNormalize(rawData).forEach(r => {
+         const key = String(r.key || '').trim();
+         if (!key) return;
+         settings[key] = r.value;
+      });
+      return settings;
+   }
+
+   function activeScheduleRows(rawScheduleData) {
+      return superNormalize(rawScheduleData).filter(r => toBool(r.active));
+   }
+
+   function googleSerialToDate(serial) {
+      return new Date((serial - GOOGLE_SHEETS_EPOCH_OFFSET_DAYS) * 24 * 60 * 60 * 1000);
+   }
+
+   function dateValueToJstDateStr(value) {
+      if (value === undefined || value === null || value === '') return '';
+
+      if (typeof value === 'number') {
+         const d = googleSerialToDate(value);
+         if (isNaN(d.getTime())) return '';
+         return dateToYmdUTC(new Date(d.getTime() + JST_OFFSET_MS));
+      }
+
+      const s = String(value).trim();
+
+      // YYYY-MM-DD はタイムゾーン変換せず、その日付として扱う
+      const ymd = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+      if (ymd) {
+         const y = ymd[1];
+         const m = String(Number(ymd[2])).padStart(2, '0');
+         const d = String(Number(ymd[3])).padStart(2, '0');
+         return `${y}-${m}-${d}`;
+      }
+
+      // 文字列化された Google Sheets シリアル値
+      if (!isNaN(Number(s)) && Number(s) > 1) {
+         const d = googleSerialToDate(Number(s));
+         if (isNaN(d.getTime())) return '';
+         return dateToYmdUTC(new Date(d.getTime() + JST_OFFSET_MS));
+      }
+
+      const d = new Date(value);
+      if (isNaN(d.getTime())) return '';
+      return dateToYmdUTC(new Date(d.getTime() + JST_OFFSET_MS));
+   }
+
+   function dateToYmdUTC(d) {
+      const y = d.getUTCFullYear();
+      const m = String(d.getUTCMonth() + 1).padStart(2, '0');
+      const day = String(d.getUTCDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+   }
+
+   function timeValueToMin(value) {
+      if (value === undefined || value === null || value === '') return NaN;
+
+      // Google Sheets の時刻シリアル値: 09:00 -> 0.375
+      // 日付時刻シリアル値の場合は小数部分のみを時刻として使う
+      if (typeof value === 'number') {
+         const fraction = value >= 1 ? value - Math.floor(value) : value;
+         return Math.round(fraction * 24 * 60);
+      }
+
+      const s = String(value).trim();
+
+      // HH:MM / HH:MM:SS
+      const hm = s.match(/^(\d{1,2}):(\d{2})(?::\d{2})?$/);
+      if (hm) {
+         return Number(hm[1]) * 60 + Number(hm[2]);
+      }
+
+      // 文字列化された Google Sheets シリアル値
+      if (!isNaN(Number(s))) {
+         const n = Number(s);
+         if (n > 0) {
+            const fraction = n >= 1 ? n - Math.floor(n) : n;
+            return Math.round(fraction * 24 * 60);
+         }
+      }
+
+      // ISO 文字列や Date として解釈できる場合
+      const d = new Date(value);
+      if (!isNaN(d.getTime())) {
+         const jst = new Date(d.getTime() + JST_OFFSET_MS);
+         return jst.getUTCHours() * 60 + jst.getUTCMinutes();
+      }
+
+      console.warn('Invalid time value:', value);
+      return NaN;
+   }
+
+   function minToTimeStr(min) {
+      const h = Math.floor(min / 60);
+      const m = min % 60;
+      return `${h}:${String(m).padStart(2, '0')}`;
+   }
+
+   function floorToInterval(min, interval) {
+      return Math.floor(min / interval) * interval;
+   }
+
+   function ceilToInterval(min, interval) {
+      return Math.ceil(min / interval) * interval;
+   }
+
+   function getScheduleDateList(rawScheduleData) {
+      const dates = activeScheduleRows(rawScheduleData)
+         .map(r => dateValueToJstDateStr(r.date))
+         .filter(Boolean);
+
+      return [...new Set(dates)].sort();
+   }
+
+   function makeDayHeadersFromSchedule(rawScheduleData, langSuffix) {
+      return getScheduleDateList(rawScheduleData).map((dateStr, index) => ({
+         date: dateStr,
+         label: formatDateLabel(dateStr, langSuffix),
+         dayIndex: index
+      }));
+   }
+
+   function getScheduleTimeRange(rawScheduleData, fallbackStartMin, fallbackEndMin) {
+      const starts = [];
+      const ends = [];
+
+      activeScheduleRows(rawScheduleData).forEach(r => {
+         const start = timeValueToMin(r.start);
+         const end = timeValueToMin(r.end);
+
+         if (Number.isFinite(start)) starts.push(start);
+         if (Number.isFinite(end)) ends.push(end);
+      });
+
+      return {
+         startMin: starts.length ? Math.min(...starts) : fallbackStartMin,
+         endMin: ends.length ? Math.max(...ends) : fallbackEndMin
+      };
+   }
+
+   function makeTimeLabelsFromRange(startMin, endMin, intervalMin, baseMin, gridUnitMin) {
+      if (!Number.isFinite(startMin) || !Number.isFinite(endMin) || !Number.isFinite(baseMin)) {
+         console.warn('Invalid time label settings:', { startMin, endMin, intervalMin, baseMin, gridUnitMin });
+         return [];
+      }
+
+      const labels = [];
+
+      for (let min = startMin; min < endMin; min += intervalMin) {
+         labels.push({
+            text: minToTimeStr(min),
+            row: Math.round((min - baseMin) / gridUnitMin) + 2,
+            span: Math.max(1, Math.round(intervalMin / gridUnitMin))
+         });
+      }
+
+      return labels;
+   }
+
+   function formatDateLabel(dateStr, langSuffix) {
+      if (!dateStr) return '';
+
+      const [y, m, d] = dateStr.split('-').map(Number);
+      const dt = new Date(y, m - 1, d);
+
+      if (langSuffix === 'en') {
+         const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+         const wd = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][dt.getDay()];
+         return `${months[m - 1]} ${d} (${wd})`;
+      }
+
+      const wd = ['日', '月', '火', '水', '木', '金', '土'][dt.getDay()];
+      return `${m}/${d}（${wd}）`;
+   }
+
+   new Vue({
+      el: '#timetableApp',
+
+      data() {
+         const lang = getLangSuffix();
+         const settings = parseSettings(embeddedSettingsData);
+
+         // timetable-test と同じ考え方で、1日あたりの表示領域を内部的に6分割する
+         // track1のみ: 6列全部、track2まで: 3列ずつ、track3まで: 2列ずつ
+         const maxTracks = 6;
+         const gridUnitMin = toNumber(settings.grid_unit_min, 5);
+         const timeLabelIntervalMin = toNumber(settings.time_label_interval_min, 60);
+         const rowHeightPx = toNumber(settings.row_height_px, 9);
+         const gridGapPx = toNumber(settings.grid_gap_px, 4);
+
+         // schedule から日付ヘッダと時間範囲を自動生成
+         const dayHeaders = makeDayHeadersFromSchedule(embeddedScheduleData, lang);
+
+         const fallbackStartMin = timeValueToMin(settings.fallback_start_time || '09:00');
+         const fallbackEndMin = timeValueToMin(settings.fallback_end_time || '20:30');
+         const rawRange = getScheduleTimeRange(embeddedScheduleData, fallbackStartMin, fallbackEndMin);
+
+         // 表示範囲は時間ラベル間隔で丸める
+         const startMin = floorToInterval(rawRange.startMin, timeLabelIntervalMin);
+         const endMin = ceilToInterval(rawRange.endMin, timeLabelIntervalMin);
+         const baseMin = startMin;
+         const totalRows = Math.ceil((endMin - baseMin) / gridUnitMin) + 2;
+
+         return {
+            langSuffix: lang,
+            loadingText: lang === 'en' ? 'Loading the latest timetable...' : '最新のタイムテーブルを読み込み中...',
+            chairLabel: lang === 'en' ? 'Chair' : '座長',
+            presentationSearchQuery: '',
+            presentationSearchPanelOpen: false,
+            loading: true,
+            errored: false,
+            error: null,
+
+            settings,
+            maxTracks,
+            gridUnitMin,
+            rowHeightPx,
+            gridGapPx,
+            baseMin,
+            totalRows,
+
+            dayHeaders,
+            timeLabels: makeTimeLabelsFromRange(
+               startMin,
+               endMin,
+               timeLabelIntervalMin,
+               baseMin,
+               gridUnitMin
+            ),
+
+            events: [],
+            days: [],
+            colorScheme: {}
+         };
+      },
+
+      computed: {
+         scheduleGridStyle() {
+            return {
+               gridTemplateColumns: `2.5rem repeat(${this.dayHeaders.length * this.maxTracks}, 1fr)`,
+               gridAutoRows: `${this.rowHeightPx}px`,
+               gap: `${this.gridGapPx}px`
+            };
+         },
+
+         presentationSearchLabel() {
+            return this.langSuffix === 'en' ? 'Search presentations' : '発表検索';
+         },
+
+         presentationSearchPlaceholder() {
+            return this.langSuffix === 'en'
+               ? 'Search by title, author, presentation ID, Paper ID, session...'
+               : 'タイトル・著者・発表ID・Paper ID・セッションで検索';
+         },
+
+         presentationSearchClearLabel() {
+            return this.langSuffix === 'en' ? 'Clear' : 'クリア';
+         },
+
+         presentationSearchCloseLabel() {
+            return this.langSuffix === 'en' ? 'Close search' : '検索を閉じる';
+         },
+
+         presentationSearchApplyLabel() {
+            return this.langSuffix === 'en' ? 'Show results' : '結果を表示';
+         },
+
+         presentationSearchHelpText() {
+            return this.langSuffix === 'en'
+               ? 'Search filters the presentation list below. Multiple words are treated as AND search.'
+               : '下部の発表一覧を絞り込みます。空白区切りの複数語はAND検索になります。';
+         },
+
+         presentationSearchNoResultsText() {
+            return this.langSuffix === 'en'
+               ? 'No presentations matched your search.'
+               : '該当する発表がありません。';
+         },
+
+         normalizedPresentationQuery() {
+            return this.normalizeSearchText(this.presentationSearchQuery);
+         },
+
+         hasPresentationSearch() {
+            return this.normalizedPresentationQuery.length > 0;
+         },
+
+         filteredDays() {
+            if (!this.hasPresentationSearch) return this.days;
+
+            return this.days
+               .map(day => {
+                  const sessions = day.sessions
+                     .map(sess => {
+                        const presentations = sess.presentations.filter(p => this.presentationMatchesQuery(p, sess, day));
+                        return Object.assign({}, sess, { presentations });
+                     })
+                     .filter(sess => sess.presentations.length > 0);
+
+                  return Object.assign({}, day, { sessions });
+               })
+               .filter(day => day.sessions.length > 0);
+         },
+
+         presentationSearchHitCount() {
+            return this.filteredDays.reduce((total, day) => {
+               return total + day.sessions.reduce((sessionTotal, sess) => {
+                  return sessionTotal + sess.presentations.length;
+               }, 0);
+            }, 0);
+         },
+
+         presentationSearchMeta() {
+            const count = this.presentationSearchHitCount;
+
+            if (this.langSuffix === 'en') {
+               return this.hasPresentationSearch
+                  ? `${count} presentation${count === 1 ? '' : 's'} found`
+                  : `${count} presentation${count === 1 ? '' : 's'} listed`;
+            }
+
+            return this.hasPresentationSearch
+               ? `${count}件の発表が見つかりました`
+               : `${count}件の発表を表示中`;
+         }
+      },
+
+      mounted() {
+         try {
+            this.colorScheme = this.parseColorScheme(embeddedColorSchemeData || []);
+
+            this.events = this.parseScheduleGrid(embeddedScheduleData || []);
+
+            this.buildProgramList(
+               embeddedScheduleData || [],
+               embeddedPresentationsData || [],
+               embeddedSessionItemsData || []
+            );
+         } catch (err) {
+            this.errored = true;
+            this.error = err.toString();
+         } finally {
+            this.loading = false;
+         }
+      },
+
+      methods: {
+         isTruthy(value) {
+            const s = String(value || '').toLowerCase().trim();
+            return ['true', '1', 'yes', 'y', 'on', '〇', '○'].includes(s);
+         },
+
+         normalizeSearchText(value) {
+            return String(value || '')
+               .toLowerCase()
+               .normalize('NFKC')
+               .replace(/\s+/g, ' ')
+               .trim();
+         },
+
+         openPresentationSearch() {
+            this.presentationSearchPanelOpen = true;
+            this.$nextTick(() => {
+               if (this.$refs.presentationSearchInput) {
+                  this.$refs.presentationSearchInput.focus();
+               }
+            });
+         },
+
+         closePresentationSearch() {
+            this.presentationSearchPanelOpen = false;
+         },
+
+         clearPresentationSearch() {
+            this.presentationSearchQuery = '';
+            this.$nextTick(() => {
+               if (this.$refs.presentationSearchInput) {
+                  this.$refs.presentationSearchInput.focus();
+               }
+            });
+         },
+
+         presentationMatchesQuery(p, sess, day) {
+            const query = this.normalizedPresentationQuery;
+            if (!query) return true;
+
+            const haystack = [
+               p.presentation_id,
+               p.paper_id,
+               p.title,
+               p.title_jp,
+               p.title_en,
+               p.authors,
+               p.authors_jp,
+               p.authors_en,
+               p.note,
+               sess.session_code,
+               sess.title,
+               sess.venue,
+               sess.chair,
+               day.date,
+               this.formatDate(day.date)
+            ].map(v => this.normalizeSearchText(v)).join(' ');
+
+            return query.split(' ').every(token => haystack.includes(token));
+         },
+
+         localized(obj, base) {
+            if (!obj) return '';
+
+            const langKey = `${base}_${this.langSuffix}`;
+            const jpKey = `${base}_jp`;
+            const enKey = `${base}_en`;
+            const plainKey = base;
+
+            return obj[langKey] || obj[jpKey] || obj[enKey] || obj[plainKey] || '';
+         },
+
+         parseColorScheme(rawData) {
+            const map = {};
+
+            superNormalize(rawData).forEach(r => {
+               const type = String(r.type || '').trim();
+               if (!type) return;
+
+               map[type] = {
+                  background: r.background || '',
+                  borderColor: r.border_color || '',
+                  color: r.color || '',
+                  borderStyle: r.border_style || ''
+               };
+            });
+
+            return map;
+         },
+
+         trackIndex(raw) {
+            const s = String(raw || '').toLowerCase().trim();
+            const m = s.match(/^track(\d+)(?:-(\d+))?$/);
+            if (!m) return 0;
+            return Math.max(Number(m[1]), Number(m[2] || m[1]));
+         },
+
+         timeRangesOverlap(aStart, aEnd, bStart, bEnd) {
+            return aStart < bEnd && bStart < aEnd;
+         },
+
+         trackCountForSlot(row, rows) {
+            const trackNums = rows
+               .filter(other => {
+                  return other.dateStr === row.dateStr &&
+                     this.timeRangesOverlap(row.startMin, row.endMin, other.startMin, other.endMin);
+               })
+               .map(other => other.trackIndex)
+               .filter(n => n > 0);
+
+            return Math.max(1, ...trackNums);
+         },
+
+         parseTrack(raw, trackCount) {
+            const units = this.maxTracks;
+            const s = String(raw || 'single').toLowerCase().trim();
+
+            if (!s || s === 'single' || s === 'all') {
+               return { offset: 1, span: units };
+            }
+
+            const m = s.match(/^track(\d+)(?:-(\d+))?$/);
+            if (!m) {
+               return { offset: 1, span: units };
+            }
+
+            const lanes = Math.max(1, Math.min(Number(trackCount) || 1, units));
+            const unitSpan = Math.max(1, Math.floor(units / lanes));
+
+            let a = Number(m[1]);
+            let b = Number(m[2] || m[1]);
+
+            a = Math.max(1, Math.min(a, lanes));
+            b = Math.max(1, Math.min(b, lanes));
+
+            const start = Math.min(a, b);
+            const end = Math.max(a, b);
+
+            return {
+               offset: (start - 1) * unitSpan + 1,
+               span: (end - start + 1) * unitSpan
+            };
+         },
+
+         parseScheduleGrid(rawData) {
+            const evs = [];
+
+            const rows = activeScheduleRows(rawData)
+               .map((r, index) => {
+                  const dateStr = dateValueToJstDateStr(r.date);
+                  const startMin = timeValueToMin(r.start);
+                  const endMin = timeValueToMin(r.end);
+
+                  if (!dateStr || !Number.isFinite(startMin) || !Number.isFinite(endMin)) return null;
+
+                  return {
+                     raw: r,
+                     index,
+                     dateStr,
+                     startMin,
+                     endMin,
+                     trackIndex: this.trackIndex(r.track)
+                  };
+               })
+               .filter(Boolean);
+
+            rows.forEach(row => {
+               const r = row.raw;
+               const dayLeft = this.dateToColumnStart(row.dateStr);
+               const trackCount = this.trackCountForSlot(row, rows);
+               const { offset, span } = this.parseTrack(r.track, trackCount);
+               const col = dayLeft + (offset - 1);
+
+               evs.push({
+                  key: `${row.dateStr}-${row.startMin}-${row.endMin}-${r.session_code || row.index}`,
+                  column: col,
+                  colSpan: span,
+                  type: r.type || 'etc',
+                  label: this.localized(r, 'label') || this.localized(r, 'title') || `${minToTimeStr(row.startMin)}–${minToTimeStr(row.endMin)}`,
+                  start: minToTimeStr(row.startMin),
+                  end: minToTimeStr(row.endMin),
+                  show_program: toBool(r.show_program),
+                  session_code: String(r.session_code || '').trim()
+               });
+            });
+
+            return evs;
+         },
+
+         buildProgramList(schData, presData, itmData) {
+            const scheduleList = activeScheduleRows(schData).filter(r => {
+               return toBool(r.show_program) && String(r.session_code || '').trim();
+            });
+
+            const presMap = {};
+            superNormalize(presData).forEach(p => {
+               const id = String(p.presentation_id || '').trim();
+               if (id) presMap[id] = p;
+            });
+
+            const itemsBySess = {};
+            superNormalize(itmData).forEach(i => {
+               const code = String(i.session_code || '').trim();
+               if (!code) return;
+
+               if (!itemsBySess[code]) itemsBySess[code] = [];
+               i.order = Number(i.order) || 0;
+               i.presentation_id = String(i.presentation_id || '').trim();
+               itemsBySess[code].push(i);
+            });
+
+            const dayMap = {};
+
+            scheduleList.forEach(s => {
+               const sessionCode = String(s.session_code || '').trim();
+               const dateStr = dateValueToJstDateStr(s.date);
+               const startMin = timeValueToMin(s.start);
+               const endMin = timeValueToMin(s.end);
+
+               if (!dateStr || !Number.isFinite(startMin) || !Number.isFinite(endMin)) return;
+               if (!dayMap[dateStr]) dayMap[dateStr] = { date: dateStr, sessions: [] };
+               const presentations = (itemsBySess[sessionCode] || [])
+                  .sort((a, b) => a.order - b.order)
+                  .filter(it => {
+                     const id = String(it.presentation_id || '').trim();
+                     // session-items に presentation_id があっても、presentations に存在しないIDは表示しない
+                     return id && Object.prototype.hasOwnProperty.call(presMap, id);
+                  })
+                  .map(it => {
+                     const id = String(it.presentation_id || '').trim();
+                     // session-items は順序・所属セッション用、presentations は発表本体情報として優先する
+                     // これにより、session-items 側の空欄列で presentations 側の title/authors 等が上書きされるのを防ぐ
+                     const p = Object.assign({}, it, presMap[id] || {});
+
+                     p.presentation_id = id;
+                     p.title = this.localized(p, 'title') || id;
+                     p.link = this.localized(p, 'link');
+                     p.authors = p.authors || p.authors_jp || p.authors_en || '';
+                     p.paper_id = String(p.paper_id || p.paperid || '').trim();
+
+                     // 表示制御は session-items 側で指定されていればそれを優先し、未指定なら presentations 側を使う
+                     p.show_id = it.show_id !== undefined && it.show_id !== '' ? it.show_id : p.show_id;
+                     p.show_paper_id = it.show_paper_id !== undefined && it.show_paper_id !== '' ? it.show_paper_id : p.show_paper_id;
+
+                     p.abs_start = it.abs_start || '';
+                     p.abs_end = it.abs_end || '';
+                     p.note = it.note || '';
+                     return p;
+                  });
+
+               dayMap[dateStr].sessions.push(Object.assign({}, s, {
+                  title: this.localized(s, 'title') || this.localized(s, 'label'),
+                  venue: this.localized(s, 'venue'),
+                  chair: this.localized(s, 'chair'),
+                  start: minToTimeStr(startMin),
+                  end: minToTimeStr(endMin),
+                  session_code: sessionCode,
+                  presentations
+               }));
+            });
+
+            this.days = Object.values(dayMap)
+               .sort((a, b) => a.date.localeCompare(b.date))
+               .map(d => {
+                  d.sessions.sort((a, b) => this.timeToMin(a.start) - this.timeToMin(b.start));
+                  return d;
+               });
+         },
+
+         dateToColumnStart(dateStr) {
+            const index = this.dayHeaders.findIndex(d => d.date === dateStr);
+            if (index < 0) {
+               console.warn('Unknown date:', dateStr);
+               return 2;
+            }
+            return 2 + index * this.maxTracks;
+         },
+
+         dayColumnStart(day) {
+            const index = this.dayHeaders.findIndex(d => d.date === day.date);
+            return 2 + Math.max(0, index) * this.maxTracks;
+         },
+
+         timeToRowStart(t) {
+            const min = timeValueToMin(t);
+            if (!Number.isFinite(min)) return 2;
+            return Math.round((min - this.baseMin) / this.gridUnitMin) + 2;
+         },
+
+         timeSpan(s, e) {
+            const start = timeValueToMin(s);
+            const end = timeValueToMin(e);
+            if (!Number.isFinite(start) || !Number.isFinite(end)) return 1;
+            return Math.max(1, Math.round((end - start) / this.gridUnitMin));
+         },
+
+         eventStyle(ev) {
+            const scheme = this.colorScheme[ev.type] || {};
+
+            return {
+               gridColumn: `${ev.column} / span ${ev.colSpan}`,
+               gridRow: `${this.timeToRowStart(ev.start)} / span ${this.timeSpan(ev.start, ev.end)}`,
+               background: scheme.background || '',
+               borderColor: scheme.borderColor || '',
+               color: scheme.color || '',
+               borderStyle: scheme.borderStyle || ''
+            };
+         },
+
+         timeToMin(t) {
+            const min = timeValueToMin(t);
+            return Number.isFinite(min) ? min : 0;
+         },
+
+         formatDate(dateStr) {
+            return formatDateLabel(dateStr, this.langSuffix);
+         }
+      }
+   });
+</script>
