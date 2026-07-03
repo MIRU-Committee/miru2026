@@ -19,7 +19,7 @@ MIRU2026では、プラチナスポンサー主催の以下のイベントが開
     参加希望の方は以下のGoogleフォームからお申込みください。<br>
     応募締切：7月21日（火）12時（参加者多数の場合は、先着順にご案内いたします）<br>
     結果通知：7月24日（金）までに、当選の方にお知らせ予定です<br>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdyZYuAI63Tm4YPBcZJeGtOyo4H8v7dUUDRAcQqj3k2kO8Rw/viewform?usp=sharing&ouid=111054103777081963504" target="_blank">応募フォーム<a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdyZYuAI63Tm4YPBcZJeGtOyo4H8v7dUUDRAcQqj3k2kO8Rw/viewform?usp=sharing&ouid=111054103777081963504" target="_blank">応募フォーム</a>
     </p>
   </div>
 </div>
@@ -41,7 +41,7 @@ MIRU2026では、プラチナスポンサー主催の以下のイベントが開
     事前参加登録制、対面開催です。参加希望の方は以下のGoogleフォームからお申込みください。<br>
     応募締切：7月22日（水）まで（参加者多数の場合は抽選のうえご案内いたします）<br>
     結果通知：7月29日（水）までに、参加いただける方にお知らせ予定です<br>
-    <a href="https://forms.gle/PEnpxV6QxnwSJJgAA" target="_blank">応募フォーム<a>
+    <a href="https://forms.gle/PEnpxV6QxnwSJJgAA" target="_blank">応募フォーム</a>
     </p>
   </div>
 </div>
