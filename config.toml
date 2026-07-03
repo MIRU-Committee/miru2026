@@ -43,6 +43,18 @@ canonifyURLs = true
   url = "/author/submission/"
 
 [[menu.main]]
+  name = "オーラル発表"
+  weight = 2
+  parent = "author"
+  url = "/author/oral/"
+
+[[menu.main]]
+  name = "インタラクティブ発表"
+  weight = 3
+  parent = "author"
+  url = "/author/interactive/"
+
+[[menu.main]]
     name = "プログラム編成方針"
     weight = 6
     parent = "author"
@@ -105,16 +117,16 @@ canonifyURLs = true
   identifier = "program"
 
 [[menu.main]]
-    name = "特別講演"
-    weight = 2
-    parent = "program"
-    url = "/program/keynote/"
-
-[[menu.main]]
   name = "タイムテーブル"
   weight = 1
   parent = "program"
   url = "/program/timetable/"
+
+[[menu.main]]
+  name = "特別講演"
+  weight = 2
+  parent = "program"
+  url = "/program/keynote/"
 
 [[menu.main]]
   name = "チュートリアル"
@@ -122,9 +134,15 @@ canonifyURLs = true
   parent = "program"
   url = "/program/tutorial/"
 
+# [[menu.main]]
+#   name = "特別企画"
+#   weight = 4
+#   parent = "program"
+#   url = "/program/special-event/"
+
 [[menu.main]]
   name = "ワークライフバランスイベント"
-  weight = 4
+  weight = 5
   parent = "program"
   url = "https://miru2026.github.io/WorkLifeBalance/index_JP.html"
 
@@ -192,6 +210,18 @@ canonifyURLs = true
   weight = 1
   parent = "author"
   url = "/en/author/submission/"
+
+[[languages.en.menu.main]]
+  name = "Oral"
+  weight = 2
+  parent = "author"
+  url = "/en/author/oral/"
+
+[[languages.en.menu.main]]
+  name = "Interactive"
+  weight = 3
+  parent = "author"
+  url = "/en/author/interactive/"
 
 [[languages.en.menu.main]]
     name = "Program Policy"
@@ -267,9 +297,15 @@ canonifyURLs = true
   parent = "program"
   url = "/en/program/tutorial/"
 
+# [[languages.en.menu.main]]
+#   name = "Special Event"
+#   weight = 4
+#   parent = "program"
+#   url = "/en/program/special-event/"
+
 [[languages.en.menu.main]]
   name = "Work Life Balance Event"
-  weight = 4
+  weight = 5
   parent = "program"
   url = "https://miru2026.github.io/WorkLifeBalance/index.html"
 
