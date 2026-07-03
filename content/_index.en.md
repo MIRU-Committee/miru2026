@@ -29,7 +29,7 @@ The Meeting on Image Recognition and Understanding (MIRU) is the largest Japanes
 - August 3 (Mon) – August 6 (Thu), 2026
 
 ## Venue  
-- [Dejima Messe Nagasaki (5-1 Onouemachi, Nagasaki City, Nagasaki Prefecture)](https://dejima-messe.jp/en)
+- [Dejima Messe Nagasaki (4-1 Onouemachi, Nagasaki City, Nagasaki Prefecture)](https://dejima-messe.jp/en)
 
 ---
 
