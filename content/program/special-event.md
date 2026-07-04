@@ -4,7 +4,7 @@ title: "特別企画"
 
 ![](/special-event/ikeuchi.jpg)
 
-## 池内 克史 先生（IrobomationLLC 代表）
+## 池内 克史 先生（Irobomation LLC 代表）
 
 ### 人工知能研究の旅 ―文化遺産のモデル化と人まねロボット
 
