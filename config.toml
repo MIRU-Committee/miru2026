@@ -135,11 +135,11 @@ timeout = "180s"
   parent = "program"
   url = "/program/tutorial/"
 
-# [[menu.main]]
-#   name = "特別企画"
-#   weight = 4
-#   parent = "program"
-#   url = "/program/special-event/"
+[[menu.main]]
+  name = "特別企画"
+  weight = 4
+  parent = "program"
+  url = "/program/special-event/"
 
 [[menu.main]]
   name = "ワークライフバランスイベント"
@@ -298,11 +298,11 @@ timeout = "180s"
   parent = "program"
   url = "/en/program/tutorial/"
 
-# [[languages.en.menu.main]]
-#   name = "Special Event"
-#   weight = 4
-#   parent = "program"
-#   url = "/en/program/special-event/"
+[[languages.en.menu.main]]
+  name = "Special Event"
+  weight = 4
+  parent = "program"
+  url = "/en/program/special-event/"
 
 [[languages.en.menu.main]]
   name = "Work Life Balance Event"
