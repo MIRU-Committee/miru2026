@@ -154,6 +154,12 @@ timeout = "180s"
   url = "/program/sponsor-events/"
 
 [[menu.main]]
+  name = "メンターシッププログラム"
+  weight = 10
+  parent = "program"
+  url = "https://sites.google.com/view/prmu-rmp/"
+
+[[menu.main]]
   name = "若手プログラム"
   weight = 11
   parent = "program"
@@ -315,6 +321,12 @@ timeout = "180s"
   weight = 6
   parent = "program"
   url = "/en/program/sponsor-events/"
+
+[[languages.en.menu.main]]
+  name = "Mentorship Program"
+  weight = 10
+  parent = "program"
+  url = "https://sites.google.com/view/prmu-rmp/"
 
 [[languages.en.menu.main]]
   name = "Wakate Program"
