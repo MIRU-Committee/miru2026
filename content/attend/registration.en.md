@@ -81,8 +81,8 @@ We encourage you to take this opportunity to become a member of IPSJ or IEICE an
 
 ## Important Notes
 
-- At least one author of each paper must register under **PRMU or CVIM Member** or **Regular**.
-- One **PRMU or CVIM Member** or **Regular** registration may be linked to multiple papers. There is no limit to the number of papers that can be linked. For example, if two students from the same laboratory each submit one paper as the first author, their supervising co-author should register under one of the above categories and link all paper numbers to that registration.
+- At least one author of each paper must **register** under **PRMU or CVIM Member** or **Regular ("IEICE or IPSJ Member" or "Non-member")**.
+- One **PRMU or CVIM Member** or **Regular ("IEICE or IPSJ Member" or "Non-member")** registration may be linked to multiple papers. There is no limit to the number of papers that can be linked. For example, if two students from the same laboratory each submit one paper as the first author, their supervising co-author should register under one of the above categories and link all paper numbers to that registration.
 - <font color="red">Please complete the registration linked to all your papers by **June 30, 11:59 AM (early registration deadline)**.</font>
 - For the paper number, please enter the Paper ID number displayed in Microsoft CMT. <font color="red">If you forget to enter the Paper ID, please contact Seibu Travel (<span>str_miru&#64;seibugroup.jp</span>).</font>
 - <font color="red">Please note that registration cannot be canceled after completion.</font>
