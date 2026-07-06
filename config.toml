@@ -299,6 +299,12 @@ timeout = "180s"
   url = "/en/program/timetable/"
 
 [[languages.en.menu.main]]
+  name = "Keynotes"
+  weight = 2
+  parent = "program"
+  url = "/en/program/keynote/"
+
+[[languages.en.menu.main]]
   name = "Tutorials"
   weight = 3
   parent = "program"
