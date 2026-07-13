@@ -56,6 +56,12 @@ timeout = "180s"
   url = "/author/interactive/"
 
 [[menu.main]]
+  name = "デモ発表"
+  weight = 4
+  parent = "author"
+  url = "/author/demo/"
+
+[[menu.main]]
     name = "プログラム編成方針"
     weight = 6
     parent = "author"
@@ -229,6 +235,12 @@ timeout = "180s"
   weight = 3
   parent = "author"
   url = "/en/author/interactive/"
+
+[[languages.en.menu.main]]
+  name = "Demo"
+  weight = 4
+  parent = "author"
+  url = "/en/author/demo/"
 
 [[languages.en.menu.main]]
     name = "Program Policy"
