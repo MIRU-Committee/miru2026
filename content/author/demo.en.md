@@ -12,7 +12,7 @@ Please present during the following time slots on all three days:
 Event & Exhibition Hall, Dejima Messe Nagasaki
 
 ## Layout
-Please refer to the venue layout page (to be released at a later date).
+Please refer to the venue [layout page](/en/attend/floorplan).
 
 ## Setup
 - Delivery and setup will be possible from 14:00 to 17:30 on 8/3 (Mon).

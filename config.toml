@@ -99,6 +99,12 @@ timeout = "180s"
   url = "/attend/registration/"
 
 [[menu.main]]
+  name = "会場レイアウト"
+  weight = 3
+  parent = "attend"
+  url = "/attend/floorplan/"
+
+[[menu.main]]
   name = "託児室"
   weight = 4
   parent = "attend"
@@ -278,6 +284,12 @@ timeout = "180s"
   weight = 1
   parent = "attend"
   url = "/en/attend/registration/"
+
+[[languages.en.menu.main]]
+  name = "Floor Plan"
+  weight = 3
+  parent = "attend"
+  url = "/en/attend/floorplan/"
 
 [[languages.en.menu.main]]
   name = "Nursery Room"

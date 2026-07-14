@@ -9,7 +9,7 @@ title: "Interactive Presentations"
 
 ## Schedule
 - One of August 4, 5, or 6 (during the interactive session).
-- Please refer to the layout page (to be released at a later date) for assigned date and location.
+- Please refer to the [layout page](/en/attend/floorplan) for assigned date and location.
 
 ## Poster Mounting
 - Please mount your poster **on the day of your presentation** (not on any other days). The start time for poster mounting will be announced at a later date.
