@@ -166,6 +166,12 @@ timeout = "180s"
   url = "/program/sponsor-events/"
 
 [[menu.main]]
+  name = "ウェルカムレセプション・交流会"
+  weight = 9
+  parent = "program"
+  url = "/program/reception/"
+
+[[menu.main]]
   name = "メンターシッププログラム"
   weight = 10
   parent = "program"
@@ -351,6 +357,12 @@ timeout = "180s"
   weight = 6
   parent = "program"
   url = "/en/program/sponsor-events/"
+
+[[languages.en.menu.main]]
+  name = "Welcome Reception & Social Gathering"
+  weight = 9
+  parent = "program"
+  url = "/en/program/reception/"
 
 [[languages.en.menu.main]]
   name = "Mentorship Program"
