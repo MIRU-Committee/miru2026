@@ -461,6 +461,18 @@
                            <span v-else v-text="p.title"></span>
                         </span>
                      </span>
+
+                     <a
+                        v-if="showGoogleFormLink(p)"
+                        :href="p.google_form"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="ms-2 badge bg-success text-decoration-none">
+                        <svg class="me-1" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false" style="vertical-align: -0.125em;">
+                           <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-11A1.5 1.5 0 0 0 13.5 1h-11zm8.354 4.354-3.5 3.5a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 7.793l3.146-3.147a.5.5 0 0 1 .708.708z"/>
+                        </svg>
+                        <span v-text="voteLabel"></span>
+                     </a>
                      <br>
                      <span
                         v-if="!(isTruthy(p.show_paper_id) && p.paper_id)"
@@ -755,6 +767,7 @@
             langSuffix: lang,
             loadingText: lang === 'en' ? 'Loading the latest timetable...' : '最新のタイムテーブルを読み込み中...',
             chairLabel: lang === 'en' ? 'Chair' : '座長',
+            voteLabel: lang === 'en' ? 'Vote' : '投票',
             presentationSearchQuery: '',
             presentationSearchPanelOpen: false,
             loading: true,
@@ -898,6 +911,60 @@
          isTruthy(value) {
             const s = String(value || '').toLowerCase().trim();
             return ['true', '1', 'yes', 'y', 'on', '〇', '○'].includes(s);
+         },
+
+         parseGoogleFormDateTime(value, endOfDay) {
+            if (value === undefined || value === null || value === '') return null;
+
+            // Google Sheets の日時シリアル値
+            if (typeof value === 'number' || (!isNaN(Number(value)) && String(value).trim() !== '')) {
+               const serial = Number(value);
+               if (serial > 1) {
+                  const d = googleSerialToDate(serial);
+                  if (isNaN(d.getTime())) return null;
+                  // Sheets のシリアル値を日本時間の壁時計として解釈する
+                  return new Date(d.getTime() - JST_OFFSET_MS);
+               }
+            }
+
+            const s = String(value).trim();
+
+            // タイムゾーン指定のない日時は日本時間として扱う
+            const local = s.match(/^(\d{4})[\/-](\d{1,2})[\/-](\d{1,2})(?:[ T](\d{1,2}):(\d{2})(?::(\d{2}))?)?$/);
+            if (local) {
+               const hasTime = local[4] !== undefined;
+               const hour = hasTime ? Number(local[4]) : (endOfDay ? 23 : 0);
+               const minute = hasTime ? Number(local[5]) : (endOfDay ? 59 : 0);
+               const second = hasTime ? Number(local[6] || 0) : (endOfDay ? 59 : 0);
+               return new Date(Date.UTC(
+                  Number(local[1]),
+                  Number(local[2]) - 1,
+                  Number(local[3]),
+                  hour - 9,
+                  minute,
+                  second,
+                  endOfDay && !hasTime ? 999 : 0
+               ));
+            }
+
+            // ISO 8601 など、タイムゾーンを含む形式
+            const d = new Date(s);
+            return isNaN(d.getTime()) ? null : d;
+         },
+
+         showGoogleFormLink(p) {
+            const presentationId = String(p.presentation_id || '').trim();
+            const formURL = String(p.google_form || '').trim();
+
+            if (!/^(IS|DS)/i.test(presentationId) || !formURL) return false;
+
+            const openAt = this.parseGoogleFormDateTime(p.google_form_open, false);
+            const closeAt = this.parseGoogleFormDateTime(p.google_form_close, true);
+            const now = new Date();
+
+            if (openAt && now < openAt) return false;
+            if (closeAt && now > closeAt) return false;
+            return true;
          },
 
          normalizeSearchText(value) {
@@ -1133,6 +1200,9 @@
                      p.link = this.localized(p, 'link');
                      p.authors = p.authors || p.authors_jp || p.authors_en || '';
                      p.paper_id = String(p.paper_id || p.paperid || '').trim();
+                     p.google_form = String(p.google_form || '').trim();
+                     p.google_form_open = p.google_form_open || '';
+                     p.google_form_close = p.google_form_close || '';
 
                      // 表示制御は session-items 側で指定されていればそれを優先し、未指定なら presentations 側を使う
                      p.show_id = it.show_id !== undefined && it.show_id !== '' ? it.show_id : p.show_id;
@@ -1144,10 +1214,12 @@
                      return p;
                   });
 
+               const chair = String(this.localized(s, 'chair') || '').trim();
+
                dayMap[dateStr].sessions.push(Object.assign({}, s, {
                   title: this.localized(s, 'title') || this.localized(s, 'label'),
                   venue: this.localized(s, 'venue'),
-                  chair: this.localized(s, 'chair'),
+                  chair,
                   start: minToTimeStr(startMin),
                   end: minToTimeStr(endMin),
                   session_code: sessionCode,
