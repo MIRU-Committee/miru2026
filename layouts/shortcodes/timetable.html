@@ -425,13 +425,14 @@
                :key="sess.session_code"
                class="program-session">
                <h4 class="mb-1">
-                  <span class="session-title" v-text="sess.title"></span>
+                  <span class="session-title">
+                     <span v-text="sess.title"></span><span v-if="sess.venue" v-text="'：' + sess.venue"></span>
+                  </span>
                </h4>
 
                <p class="small session-meta" :id="sess.session_code">
                   <i class="fas fa-clock me-1"></i>
                   <span v-text="sess.start + '–' + sess.end"></span>
-                  <span v-if="sess.venue"> | <span v-text="sess.venue"></span></span>
                   <span v-if="sess.chair"> | <span v-text="chairLabel"></span>: <span v-text="sess.chair"></span></span>
                </p>
 
