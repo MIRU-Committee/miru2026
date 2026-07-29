@@ -5,6 +5,24 @@ title: "The 29th Meeting on Image Recognition and Understanding (MIRU2026)"
 ## About  
 The Meeting on Image Recognition and Understanding (MIRU) is the largest Japanese annual symposium on image recognition and understanding. Unrelated of whether you are at a university, private company, or just interested in top-notch research of this field; this is the place for meeting, collaborating, and socializing with researchers and professionals.
 
+### Regarding the Earthquake on July 28
+
+On July 28, a very large earthquake occurred in Kumamoto Prefecture and the surrounding areas. We would like to express our deepest sympathies to all those affected by the disaster. We sincerely hope for a swift recovery and the earliest possible return to normal life.
+
+Regarding MIRU2026, scheduled to be held next week in Nagasaki, we would like to provide the following update as of now.
+
+**Seismic Intensity in Nagasaki City**  
+As a result of this earthquake, a seismic intensity of 4 was observed in Nagasaki City.
+
+**Impact on the Venue and Conference Operations**  
+There are no safety issues with the venue building, and there was no particular impact on the use of the venue for events on the day of the earthquake.  
+However, train services operated by JR Kyushu were temporarily suspended, resulting in delays. When traveling to the venue, please check the latest transportation information and allow plenty of time for your journey.
+
+If you have difficulty participating in or presenting at MIRU2026 due to the impact of the disaster, please contact us through the [MIRU2026 Contact Form](https://docs.google.com/forms/d/e/1FAIpQLSdYF0AUqw1wiJnK98sGD3F5lk3RfIN9hb3Kr57r_Anq4xnIWA/viewform).
+
+We ask all participants to take care while traveling to the venue. We sincerely look forward to welcoming you to MIRU2026.
+
+
 ## News  
 - **Email to participants**: We have sent an email to participants regarding how to participate in MIRU2026 and how to access the Extended Abstracts (Subject: 【重要】MIRU2026に関するご案内/Extended Abstract集へのアクセスについて). The email will be sent automatically after registration to those who register from now on.
 - **2026.07.23**: The [Welcome Reception and Social Gathering](program/reception/) page has been published.
