@@ -24,6 +24,7 @@ We ask all participants to take care while traveling to the venue. We sincerely 
 
 
 ## News  
+- **2026.07.30**: The [Floor Map](attend/floor_map/) page has been published.
 - **Email to participants**: We have sent an email to participants regarding how to participate in MIRU2026 and how to access the Extended Abstracts (Subject: 【重要】MIRU2026に関するご案内/Extended Abstract集へのアクセスについて). The email will be sent automatically after registration to those who register from now on.
 - **2026.07.23**: The [Welcome Reception and Social Gathering](program/reception/) page has been published.
 - **2026.07.16**: The detailed [Program](program/timetable/) has been published.
