@@ -17,6 +17,10 @@ title: "Awards"
   <p class="award-reason">
     授賞理由：入力チャネルを拡張しノイズ混合画像を加えるだけという極めてシンプルな方法で，回帰学習に基づく既存の画像対画像変換モデルを連続時間輸送モデルへ拡張できることを理論的に示した美しい研究である．わずか3ステップという高速な推論を実現すると同時に，さまざまな既存モデルの性能を大きく向上させるなど，汎用性や実用性にも極めて優れている．生成に関わる幅広い研究分野に大きなインパクトを与えうる点が高く評価できる．
   </p>
+
+  <div class="award-photo">
+    <img src="/awards/nagao.jpg" alt="MIRU Nagao Award">
+  </div>
 </div>
 
 <div class="award-item">
@@ -35,6 +39,10 @@ title: "Awards"
     授賞理由：一般画像で学習済みのRectified Flowモデルを再学習することなく，ドメインが異なる漫画の画像編集に対して利用する巧妙かつ簡素な工夫を提案した．漫画画像特有の著作権という問題も考慮した問題設定と，training-freeでドメイン外の画像編集を可能にするというアイデアは，産業面・学術面ともに高い価値があると認められ，漫画以外のドメインへの有効性も期待される点が高く評価できる．
   </p>
 
+  <div class="award-photo">
+    <img src="/awards/excellent1.jpg" alt="MIRU Excellent Paper Award 1">
+  </div>
+
   <p class="award-paper">
     <span class="award-paper-id">OS1E-01</span>
     <span class="award-title">What-Where Transformer: 物体の意味と位置情報を分離し並行処理する画像バックボーン</span>
@@ -47,6 +55,10 @@ title: "Awards"
   <p class="award-reason">
     授賞理由：Vision Transformerのアーキテクチャを再設計し，what情報を運ぶトークン経路とwhere情報を運ぶアテンション経路と明示的に分離し学習を進める2ストリーム型のアーキテクチャ提案した．what-whereを分離するというシンプルかつ効果的なアイデア，様々な下流タスクに波及する転用性は高く評価できる．特に既存のタスクへの対応関係が明確化された点は様々な研究アイデアを刺激することが期待される．
   </p>
+
+  <div class="award-photo">
+    <img src="/awards/excellent2.jpg" alt="MIRU Excellent Paper Award 2">
+  </div>
 </div>
 
 <div class="award-item">
@@ -64,6 +76,10 @@ title: "Awards"
   <p class="award-reason">
     授賞理由：単一画像からの3次元手姿勢推定において，物体形状や機能が把持の仕方を規定するというアフォーダンスをテキスト記述として与え，拡散モデルによる生成事前分布に組み込む手法を提案した．遮蔽という不良設定を言語による事前知識で解くという着想が興味深く，丁寧な実験，評価によって有効性を明確に示している点が高く評価できる．
   </p>
+
+  <div class="award-photo">
+    <img src="/awards/excellent_student.jpg" alt="MIRU Excellent Student Paper Award">
+  </div>
 
   <p class="award-paper">
     <span class="award-paper-id">OS1C-03</span>
@@ -94,6 +110,10 @@ title: "Awards"
   <p class="award-reason">
     授賞理由：LLMにおける公平性の研究で注目されてこなかった，見た目や振る舞いなどの非人口統計学的属性に着目し，これらの属性に対して商用vision-languageモデルの公平性を計測する枠組を構築するとともに，多くのモデルで公平性が大きく損なわれることを明らかにした．AI利用に対するリスクが社会的にも注目される中，これまで見過ごされてきた観点に光を当てた本研究は，公平性の研究に新たな潮流を生み出す可能性を秘めている．
   </p>
+
+  <div class="award-photo">
+    <img src="/awards/frontier.jpg" alt="MIRU Frontier Paper Award">
+  </div>
 </div>
 
 

@@ -145,3 +145,16 @@
 .award-reason {
   margin-top: 0.8rem;
 }
+
+.award-photo {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.award-photo img {
+  display: inline-block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+}
