@@ -24,3 +24,236 @@ draft: false
 - メンターシップ委員長：八木 拓真（産業技術総合研究所）
 - メンターシップ副委員長：西村 和也（大阪大学）
 - インターナショナル委員：カストナー マークアウレル（広島市立大学）
+
+
+# プログラム委員会
+
+## エリアチェア
+#### 領域A
+- 千葉 直也（領域代表）
+- 金崎 朝子
+- 髙谷 剛志
+- トマ ディエゴ
+- 中野 学
+- 中村 拓紀
+- 藤村 友貴
+
+#### 領域B
+- 早志 英朗（領域代表）
+- 井上 中順
+- 川本 一彦
+- 菅間 幸司
+- 末廣 大貴
+- 武田 翔一郎
+- 平川 翼
+
+#### 領域C
+- 品川 政太朗（領域代表） 
+- 秋月 秀一 
+- 大谷 まゆ 
+- 金子 直史 
+- 中島 悠太 
+- 古田 諒佑 
+- 柳井 啓司 
+
+#### 領域D
+- 満上 育久（領域代表）
+- 飯山 将晃 
+- 内山 英昭 
+- 川原 僚 
+- 北原 格 
+- 坂田 幸辰 
+- 下田 和 
+
+## 評価委員
+#### シニア委員
+- Hiroaki Aizawa
+- Mitsuru Ambai
+- Kota Aoki
+- Yoshimitsu Aoki
+- Atsuhiko Banno
+- Ryoma Bise
+- Daisuke Deguchi
+- Keisuke Doman
+- Yuichiro Fujimoto
+- Tomohiro Fujita
+- Hiroshi Fukui
+- Takuya Funatomi
+- Hitoshi Habe
+- Hirotaka Hachiya
+- Ryuhei Hamaguchi
+- Shota Harada
+- Daichi Haraguchi
+- Atsushi Hashimoto
+- Manabu Hashimoto
+- Noriaki Hashimoto
+- Yuki HIROHASHI
+- Shinsaku Hiura
+- Hidekata Hontani
+- Maiya Hori
+- Kazuhiro Hotta
+- Ichiro Ide
+- Satoshi Ikehata
+- Katsufumi Inoue
+- Atsushi Irie
+- Go Irie
+- Yasunori Ishii
+- Hiroshi Ishikawa
+- Mariko Isogawa
+- Koichi Ito
+- Seiya Ito
+- Takafumi Iwaguchi
+- Yoshio Iwai
+- Masakazu Iwamura
+- Yuta Kageyama
+- Takuya Kamitani
+- Yasushi Kanazawa
+- Takuhiro Kaneko
+- Marc A. Kastner
+- Hirokatsu Kataoka
+- Hiroharu Kato
+- Yasutomo Kawanishi
+- Hiroaki Kawashima
+- Hiroshi Kera
+- Kotaro Kikuchi
+- Akisato Kimura
+- Daiki Kimura
+- Toshihiro Kitajima
+- Kazuya Kitano
+- Hiroki Kobayashi
+- Takashi Komuro
+- Kazuaki Kondo
+- Satoshi Kosugi
+- Kazuki Kozuka
+- Hiroyuki Kubo
+- Shiro Kumano
+- Yusuke Kurose
+- Takahiro Kushida
+- Haruya Kyutoku
+- Guang Li
+- Keisuke Maeda
+- Akinobu Maejima
+- Yusuke Matsui
+- Tetsu Matsukawa
+- Yoshito Mekada
+- Tsubasa Minematsu
+- Yu Mitsuzumi
+- Shoko Miyauchi
+- Yoshihiko Mochizuki
+- Yusuke Mori
+- Ryugo Morita
+- Yasuhiro Mukaigawa
+- Yusuke Mukuta
+- Hajime Nagahara
+- Tomohiro Nakai
+- Kazuaki Nakamura
+- Tomoya Nakamura
+- Kengo Nakata
+- Mitsuru Nakazawa
+- Takuya Nanri
+- Hitoshi Nishimura
+- Kazuya Nishimura
+- Naoko Nitta
+- Shohei Nobuhara
+- Hirokazu Nosato
+- Takahiro Ogawa
+- Koichi Ogawara
+- Takehiko Ohkawa
+- Wataru Ohyama
+- Takeshi Oishi
+- Takahiro Okabe
+- Takayuki Okatani
+- Moeri Okuda
+- Fumio Okura
+- Shinichiro Omachi
+- Atsuki Osanai
+- Yasunori Ozaki
+- Yuko Ozasa
+- Ryusuke Sagawa
+- Hideo Saito
+- Naoki Saito
+- Fumihiko Sakaue
+- Ken Sakurada
+- Hiroaki Santo
+- Ikuro Sato
+- Shin’ichi Satoh
+- Yusuke Sekikawa
+- Takashi Shibata
+- Nobutaka Shimada
+- Masamichi Shimosaka
+- Koichi SHINODA
+- Hayaru Shouno
+- Kyoko Sudo
+- Yusuke Sugano
+- Masanori Suganuma
+- Komei Sugiura
+- Shinichi Sumiyoshi
+- Ryota Suzuki
+- Tomoyuki Suzuki
+- Keita Takahashi
+- Kosuke Takahashi
+- Keita Takeda
+- Noriko Takemura
+- Takafumi Taketomi
+- Tetsuya Takiguchi
+- Toru Tamaki
+- Hiroshi Tanaka
+- Kenichiro Tanaka
+- Masayuki Tanaka
+- Yuki Tanaka
+- Shuhei Tarashima
+- Ren Togo
+- Hideki Tsunashima
+- Seiichi Uchida
+- Yusuke Uchida
+- Yuki Uranishi
+- Yuzuko Utsumi
+- Yoshihiro Watanabe
+- Takuma Yagi
+- Yoshihiro Yamada
+- Kota Yamaguchi
+- Yoko Yamakata
+- Shintaro Yamamoto
+- Takahisa Yamamoto
+- Toshihiko Yamasaki
+- Kohei Yamashita
+- Tatsuya Yokota
+- Shunsuke Yoneda
+- Ryo Yonetani
+- Ryota Yoshihashi
+
+#### ジュニア委員
+- Kosuke Ashino
+- Ning Ding
+- Kenji Fujimoto
+- Guoqing Hao
+- Tomoki Ichikawa
+- Ryo Ishiyama
+- Hidenori Itaya
+- Shoma Iwai
+- Masahiro Kada
+- Hodaka Kawachi
+- Genki Kinoshita
+- Yugo Kubota
+- Mingzhuo Li
+- Jiaqing Liu
+- Hiroaki Minoura
+- Naoki Okamoto
+- Keigo Sakurai
+- Shogo Sato
+- Kota Shimomura
+- Naoya Sogi
+- Shizhe Sun
+- Shihori Uchida
+- Chao Wang
+- Shuqiong Wu
+- Ling Xiao
+- Huaying Zhang
+
+
+# 賞選定委員会
+- 委員長　玉木徹（名古屋工業大学）
+- 委員　　青木義満（慶應義塾大学）
+- 委員　　木村昭悟（NTT）
+- 委員　　中山英樹（東京大学）
+- 委員　　舩冨 卓哉（京都大学）
