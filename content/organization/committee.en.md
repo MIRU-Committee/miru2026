@@ -3,7 +3,7 @@ title: "Committee"
 draft: false
 ---
 
-# Organizing commitee
+# Organizing Commitee
 - General chair: Hideo Saito (Keio Univ.), Takahiro Okabe (Okayama Univ.)
 - Program chair: Masashi Nishiyama (Tottori Univ.), Yuta Nakashima (Univ. of Osaka)
 - Program co-chair: Kei Shimonishi (Kyoto Univ.)
@@ -25,9 +25,9 @@ draft: false
 - Mentorship co-chair: Kazuya Nishimura (Univ. of Osaka)
 - International committee: Marc A. Kastner (Hiroshima City Univ.)
 
-# Program commitee
+# Program Commitee
 
-## Area chairs
+## Area Chairs
 #### Area A
 - Naoya Chiba
 - Asako Kanezaki
@@ -65,8 +65,8 @@ draft: false
 - Wataru Shimoda
 
 
-## Evaluation committee
-#### Senior evaluators
+## Evaluation Committee
+#### Senior Evaluators
 - Hiroaki Aizawa
 - Mitsuru Ambai
 - Kota Aoki
@@ -222,7 +222,7 @@ draft: false
 - Ryo Yonetani
 - Ryota Yoshihashi
 
-#### Junior evaluators
+#### Junior Evaluators
 - Kosuke Ashino
 - Ning Ding
 - Kenji Fujimoto
